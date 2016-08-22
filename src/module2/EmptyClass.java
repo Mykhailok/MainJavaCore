@@ -1,4 +1,4 @@
 package module2;
-/*For ierarhy*/
+/*For ierarhy Mykhailok*/
 public class EmptyClass {
 }
