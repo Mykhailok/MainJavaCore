@@ -81,48 +81,48 @@ public class HW2_1 {
 
     public static void main(String[] args) {
         int sumInt = calculateSumInt(arrayInt);
-        System.out.println("Сумма массива в int = "+ sumInt);
+        System.out.println("Сумма массива в arrayInt = "+ sumInt);
 
 
         double sumDouble = calculateSumDouble(arrayDouble);
-        System.out.println("Сумма массива в double = "+ sumDouble);
+        System.out.println("Сумма массива в arrayDouble = "+ sumDouble);
 
 
         int calculateMinInt = calculateMinInt(arrayInt);
-        System.out.println("Минимальное число в массиве Int = " + calculateMinInt);
+        System.out.println("Минимальное число в массиве arrayInt = " + calculateMinInt);
 
 
         int calculateMaxInt = calculateMaxInt(arrayInt);
-        System.out.println("Максимальное число в массиве Int = " + calculateMaxInt);
+        System.out.println("Максимальное число в массиве arrayInt = " + calculateMaxInt);
 
 
         double calculateMinDouble = calculateMinDouble(arrayDouble);
-        System.out.println("Минимальное число в массиве Double = " + calculateMinDouble);
+        System.out.println("Минимальное число в массиве arrayDouble = " + calculateMinDouble);
 
 
-        double calculateMaxDouble = calculateMaxDouble(arrayDouble);
-        System.out.println("Максимальное число в массиве Double = " + calculateMaxDouble);
+        double calculateMaxDouble = calculateMaxDouble(arrayMaxPositiveDouble);
+        System.out.println("Максимальное число в массиве arrayMaxPositiveDouble = " + calculateMaxDouble);
 
 
         int calculateMaxPositiveInt = calculateMaxPositiveInt(arrayMaxPositiveInt);
             if (calculateMaxInt(arrayMaxPositiveInt) < 0){
-                System.out.println("Максимального положительного числа в массиве Int нет");
+                System.out.println("Максимального положительного числа в массиве arrayMaxPositiveInt нет");
         }
             else if (calculateMaxInt(arrayMaxPositiveInt) == 0) {
-                System.out.println("Максимально положительное число в массиве Int равно 0");
+                System.out.println("Максимально положительное число в массиве arrayMaxPositiveInt равно 0");
         }
             else
-                System.out.println("Максимальное положительное число в массиве Int = " + calculateMaxPositiveInt);
+                System.out.println("Максимальное положительное число в массиве arrayMaxPositiveInt = " + calculateMaxPositiveInt);
 
         double calculateMaxPositiveDouble = calculateMaxPositiveDouble(arrayMaxPositiveDouble);
         if (calculateMaxPositiveDouble(arrayMaxPositiveDouble) < 0){
-            System.out.println("Максимального положительного числа в массиве Double нет");
+            System.out.println("Максимального положительного числа в массиве arrayMaxPositiveDouble нет");
         }
         else if (calculateMaxPositiveDouble(arrayMaxPositiveDouble) == 0) {
-            System.out.println("Максимально положительное число в массиве Double равно 0");
+            System.out.println("Максимально положительное число в массиве arrayMaxPositiveDouble равно 0");
         }
         else
-            System.out.println("Максимальное положительное число в массиве Double = " + calculateMaxPositiveDouble);
+            System.out.println("Максимальное положительное число в массиве arrayMaxPositiveDouble = " + calculateMaxPositiveDouble);
     }
 
 
