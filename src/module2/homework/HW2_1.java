@@ -2,7 +2,7 @@ package module2.homework;
 
 public class HW2_1 {
     static int[] arrayInt = {-16, 134, 3460, -4246, 5346, 436, 2344, 150, 25, 5};
-    static double[] arrayDouble = {-1435, 134, 3460, -4246, 5346, 436, 2344, 150, 25, 987};
+    static double[] arrayDouble = {-1435, 134, 3461, -4246, 5346, 436, 2344, 150, 25, 987};
     static int[] arrayMaxPositiveInt = {-8, -5, 0, 9};
     static double[] arrayMaxPositiveDouble = {-8, -5, -10, -9};
     static long[] arrayLong = {-1435, 134, 3460, -4246, 5346, 436, 2344, 150, 25, 987};
@@ -124,6 +124,18 @@ public class HW2_1 {
     }
 
 
+    static double secondLargestD(double[] arrayDouble){
+        double secondLargestD = 0;
+        double maxD = calculateMaxDouble(arrayDouble);
+        for (double i : arrayDouble){
+            if ((i > secondLargestD) && (i < maxD)){
+                secondLargestD = i;
+            }
+        }
+        return secondLargestD;
+    }
+
+
     public static void main(String[] args) {
         int sumInt = calculateSumInt(arrayInt);
         System.out.println("Сумма массива в arrayInt = "+ sumInt);
@@ -174,6 +186,7 @@ public class HW2_1 {
         System.out.println("Деление по модулю первого и последнего элемента массива arrayInt = " + modulus(arrayInt));
         System.out.println("Деление по модулю первого и последнего элемента массива arrayDouble = " + modulusD(arrayDouble));
         System.out.println("Второе максимальное число в массиве arrayInt = " + secondLargest(arrayInt));
+        System.out.println("Второе максимальное число в массиве arrayDouble = " + secondLargestD(arrayDouble));
     }
 
 
