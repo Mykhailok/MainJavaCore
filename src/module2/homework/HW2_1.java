@@ -1,7 +1,7 @@
 package module2.homework;
 
 public class HW2_1 {
-    static int[] arrayInt = {-16, 134, 3460, -4246, 5346, 436, 2344, 150, 25, 5};
+    static int[] arrayInt = {-16, 134, 3460, -4246, 5346, 436, 2344, 150, 25, 0};
     static double[] arrayDouble = {-1435, 134, 3461, -4246, 5346, 436, 2344, 150, 25, 987};
     static int[] arrayMaxPositiveInt = {-8, -5, 0, 9};
     static double[] arrayMaxPositiveDouble = {-8, -5, -10, -9};
@@ -102,6 +102,7 @@ public class HW2_1 {
         int mod = 0;
         if (last != 0) {
             mod = first % last;
+            System.out.println("Деление по модулю первого и последнего элемента массива arrayInt = " + mod);
             }
         else System.out.println("Деление на 0 невозможно");
         return mod;
@@ -187,7 +188,8 @@ public class HW2_1 {
 
         System.out.println("Умножение всех чисел массива arrayLong = " + multiplicationLong(arrayLong));
         System.out.println("Умножение всех чисел массива arrayDouble = " + multiplicationDouble(arrayDouble));
-        System.out.println("Деление по модулю первого и последнего элемента массива arrayInt = " + modulus(arrayInt));
+        //System.out.println("Деление по модулю первого и последнего элемента массива arrayInt = " + modulus(arrayInt));
+        modulus(arrayInt);
         System.out.println("Деление по модулю первого и последнего элемента массива arrayDouble = " + modulusD(arrayDouble));
         System.out.println("Второе максимальное число в массиве arrayInt = " + secondLargest(arrayInt));
         System.out.println("Второе максимальное число в массиве arrayDouble = " + secondLargestD(arrayDouble));
