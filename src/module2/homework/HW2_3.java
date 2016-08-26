@@ -23,7 +23,7 @@ public class HW2_3 {
 
 
         for(String name : ownerNames) {
-            if (name == nameOwn) {
+            if (name.equals(nameOwn)) {
 
                 System.out.println(name);
             }
