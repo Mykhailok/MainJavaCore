@@ -16,7 +16,7 @@ public class HW2_1 {
     }
 
     static double calculateSumDouble(double[] arrayDouble) {
-        int calculateSumDouble = 0;
+        double calculateSumDouble = 0;
         for (double sum : arrayDouble) {
             calculateSumDouble += sum;
         }
@@ -26,7 +26,7 @@ public class HW2_1 {
     static int calculateMinInt (int[] arrayInt){
         int calculateMin = arrayInt[0];
         for (int min : arrayInt){
-            if (calculateMin > min+1){
+            if (calculateMin > min){
                 calculateMin = min;
             }
         }
@@ -37,7 +37,7 @@ public class HW2_1 {
     static int calculateMaxInt (int[] arrayInt){
         int calculateMax = arrayInt[0];
         for (int max : arrayInt){
-            if (calculateMax < max+1){
+            if (calculateMax < max){
                 calculateMax = max;
             }
         }
@@ -48,7 +48,7 @@ public class HW2_1 {
     static double calculateMinDouble(double[] arrayDouble){
         double calculateMin = arrayDouble[0];
         for (double min : arrayDouble){
-            if (calculateMin > min+1){
+            if (calculateMin > min){
                 calculateMin = min;
             }
 
@@ -59,7 +59,7 @@ public class HW2_1 {
     static double calculateMaxDouble(double[] arrayDouble){
         double calculateMax = arrayDouble[0];
         for (double max: arrayDouble) {
-            if (calculateMax < max+1){
+            if (calculateMax < max){
                 calculateMax = max;
             }
         }
@@ -96,10 +96,14 @@ public class HW2_1 {
         return multD;
     }
 
-    static int modulus(int[] arrayInt){
+    static int modulus(int[] arrayInt) {
         int first = arrayInt[0];
-        int last = arrayInt[arrayInt.length-1];
-        int mod = first % last;
+        int last = arrayInt[arrayInt.length - 1];
+        int mod = 0;
+        if (last != 0) {
+            mod = first % last;
+            }
+        else System.out.println("Деление на 0 невозможно");
         return mod;
     }
 
