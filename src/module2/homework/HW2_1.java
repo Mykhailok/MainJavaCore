@@ -118,7 +118,6 @@ public class HW2_1 {
             System.out.println("Деление по модулю первого и последнего элемента массива arrayDouble = " + mod);
         }
         else System.out.println("Деление на 0 невозможно");
-
         return mod;
     }
 
