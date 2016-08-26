@@ -8,14 +8,16 @@ public class HW2_3 {
     private static String[] ownerNames = {"Jane", "Ann", "Jack", "Oww", "Lane"};
 
 
+
+
     static String[] getOwnerNames(int[] balances, String[] ownerNames) {
 
         for (int balance : balances) {
-            double sum = balance*commission;
+            double sum = balance - withdrawal*commission;
 
 
 
-            System.out.println(balance+" "+sum);
+            System.out.println(sum);
         }
 
 
@@ -36,6 +38,7 @@ public class HW2_3 {
     }
     public static void main(String[] args) {
             getOwnerNames(balances,ownerNames);
+
     }
 
 }
