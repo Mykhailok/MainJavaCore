@@ -112,12 +112,18 @@ public class HW2_1 {
     static double modulusD(double[] arrayDouble){
         double first = arrayDouble[0];
         double last = arrayDouble[arrayDouble.length-1];
-        double mod = first % last;
+        double mod = 0;
+        if (last != 0) {
+            mod = first % last;
+            System.out.println("Деление по модулю первого и последнего элемента массива arrayDouble = " + mod);
+        }
+        else System.out.println("Деление на 0 невозможно");
+
         return mod;
     }
 
     static int secondLargest(int[] arrayInt){
-        int secondLarger = 0;
+        int secondLarger = arrayInt[0];
         int max = calculateMaxInt(arrayInt);
 
         for (int i=0; i < arrayInt.length; i++){
@@ -130,7 +136,7 @@ public class HW2_1 {
 
 
     static double secondLargestD(double[] arrayDouble){
-        double secondLargestD = 0;
+        double secondLargestD = arrayDouble[0];
         double maxD = calculateMaxDouble(arrayDouble);
         for (double i : arrayDouble){
             if ((i > secondLargestD) && (i < maxD)){
@@ -188,9 +194,8 @@ public class HW2_1 {
 
         System.out.println("Умножение всех чисел массива arrayLong = " + multiplicationLong(arrayLong));
         System.out.println("Умножение всех чисел массива arrayDouble = " + multiplicationDouble(arrayDouble));
-        //System.out.println("Деление по модулю первого и последнего элемента массива arrayInt = " + modulus(arrayInt));
         modulus(arrayInt);
-        System.out.println("Деление по модулю первого и последнего элемента массива arrayDouble = " + modulusD(arrayDouble));
+        modulusD(arrayDouble);
         System.out.println("Второе максимальное число в массиве arrayInt = " + secondLargest(arrayInt));
         System.out.println("Второе максимальное число в массиве arrayDouble = " + secondLargestD(arrayDouble));
     }
