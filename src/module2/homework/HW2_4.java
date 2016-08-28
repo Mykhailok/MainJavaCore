@@ -21,6 +21,7 @@ public class HW2_4 {
 
 
     public static void main(String[] args) {
+
         withdrawBalance(balances,ownerNames);
     }
 
