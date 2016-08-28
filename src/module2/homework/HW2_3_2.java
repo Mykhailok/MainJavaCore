@@ -3,8 +3,6 @@ package module2.homework;
 public class HW2_3_2 {
 
         private static double commission = 0.05;
-        //private static String nameOwn = "Ann";
-        //private static double withdrawal = 150;
         private static int[] balances = {1200, 250, 2000, 500, 3200};
         private static String[] ownerNames = {"Jane", "Ann", "Jack", "Oww", "Lane"};
 
@@ -12,7 +10,7 @@ public class HW2_3_2 {
         static double withdrawBalance(String ownerName, double withdrawal) {
             double rest = 0;
 
-            for (int i = 0; i < balances.length; i++) {
+            for (int i = 0; i < ownerNames.length; i++) {
                 double balance = balances[i];
                 rest = balance - withdrawal - withdrawal * commission;
                 if (rest > 0) {
@@ -27,7 +25,7 @@ public class HW2_3_2 {
         public static void main(String[] args) {
 
 
-            withdrawBalance("Ann", 150);
+            withdrawBalance("Ann", 100);
 
         }
 
