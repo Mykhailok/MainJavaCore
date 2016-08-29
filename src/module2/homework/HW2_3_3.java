@@ -10,7 +10,7 @@ public class HW2_3_3 {
 
 
     static double withdrawBalance(String ownerName, double withdrawal) {
-        double rest = 0;
+        double rest = -1;
         double balance;
         for (int i =0; i < ownerNames.length; i++) {
             if (ownerName.equals(ownerNames[i])) {
