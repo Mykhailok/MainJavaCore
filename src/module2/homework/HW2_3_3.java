@@ -1,6 +1,7 @@
 package module2.homework;
 
 public class HW2_3_3 {
+
     private static String name = "Ann";
     private static double withdraw = 100;
     private static double commission = 0.05;
@@ -15,19 +16,21 @@ public class HW2_3_3 {
             if (ownerName.equals(ownerNames[i])) {
                 balance = balances[i];
                 rest = balance - withdrawal - withdrawal*commission;
+
             }
+
         }
-        return rest;
+
+            return rest;
+
     }
-
-
 
     public static void main(String[] args) {
-        if (withdrawBalance(name, withdraw) > 0) {
-            System.out.println(name + " " + withdraw + " " + withdrawBalance(name, withdraw));
-        }
-        else System.out.println(name + " NO");
-    }
 
+            if (withdrawBalance(name, withdraw) >= 0) {
+                System.out.println(name + " " + withdraw + " " + withdrawBalance(name, withdraw));
+            } else System.out.println(name + " NO");
+
+    }
 
 }
