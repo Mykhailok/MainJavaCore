@@ -1,11 +1,31 @@
 package module3.homework.task3;
 
-public class SpecialStudent {
-    //
-    //
-    //
-    //
-    //
-    //
-    //
+public class SpecialStudent extends CollegeStudent {
+
+    protected long secretKey;
+    protected String email;
+
+    public SpecialStudent(String firstName, String lastName, int group, String collegeName, int rating, long id) {
+        super(firstName, lastName, group, collegeName, rating, id);
+    }
+
+    public SpecialStudent(String firstName, String lastName, int group) {
+        super(firstName, lastName, group);
+    }
+
+    private long getSecretKey() {
+        return secretKey;
+    }
+
+    private void setSecretKey(long secretKey) {
+        this.secretKey = secretKey;
+    }
+
+    private String getEmail() {
+        return email;
+    }
+
+    private void setEmail(String email) {
+        this.email = email;
+    }
 }
