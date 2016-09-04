@@ -72,13 +72,36 @@ public class User {
     protected static User employee = new User("Mykhailo", 2000, 6, "InterLink", 1000, "UAH");
 
     public static int paySalary() {
-        int sum = employee.balance + employee.salary;
+        int sum = employee.getBalance() + employee.getSalary();
         return sum;
     }
 
 
+    protected static double withdraw(int summ) {
+
+        double rest;
+        if (employee.getBalance() < 1000){
+            rest = employee.getBalance() - summ - summ*5/100;
+        }
+        else rest = employee.getBalance() - summ - summ*10/100;
+        return  rest;
+    }
+
+    protected static int monthIncreaser(int addMonth){
+        int month;
+
+        month = employee.getMonthsOfEmployment() + addMonth;
+
+        return month;
+
+    }
+
+
     public static void main(String[] args) {
-        System.out.println(paySalary());
+        System.out.println("The salary is " + paySalary() + " " + employee.getCurrency());
+        System.out.println("Rest after comission is " + withdraw(100) + " " + employee.getCurrency());
+        System.out.println("Company name Length is " + employee.getCompanyName().length());
+        System.out.println("Employment months added to " + monthIncreaser(1));
 
     }
 }
