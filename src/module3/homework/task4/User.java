@@ -1,12 +1,12 @@
 package module3.homework.task4;
 
 public class User {
-    protected String name;
-    protected int balance;
-    protected int monthsOfEmployment;
-    protected String companyName;
-    protected int salary;
-    protected String currency;
+    private String name;
+    private int balance;
+    private int monthsOfEmployment;
+    private String companyName;
+    private int salary;
+    private String currency;
 
     public String getName() {
         return name;
@@ -71,12 +71,12 @@ public class User {
     //a few constructors
 
 
-    private void paySalary() {
+    public void paySalary() {
         balance += salary;
     }
 
 
-    private void withdraw(int summ) {
+    public void withdraw(int summ) {
 
 
         if (balance < 1000){
@@ -86,11 +86,11 @@ public class User {
 
     }
 
-    private void companyNameLenght() {
+    public void companyNameLenght() {
         companyName = String.valueOf(companyName.length());
     }
 
-    private void monthIncreaser(int addMonth){
+    public void monthIncreaser(int addMonth){
 
         monthsOfEmployment +=  addMonth;
 
