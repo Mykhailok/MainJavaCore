@@ -6,6 +6,8 @@ public class USBank extends Bank {
         super(currency, id, bankCountry, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
     }
 
+    double commission;
+
     @Override
     int getLimitOfWithdrawal() {
         int limit;
@@ -16,25 +18,28 @@ public class USBank extends Bank {
 
     @Override
     int getLimitOfFunding() {
-        return 0;
+        int limit;
+        if (getCurrency() == Currency.EUR) limit = 10000;
+        else  limit = 0;
+        return limit;
     }
 
     @Override
-    int getMonthlyRate() {
+    double getMonthlyRate() {
         return 0;
     }
 
     @Override
     //
-    int getCommission(int amount) {
-        int commission;
+    double getCommission(int amount) {
+
         if (getCurrency() == Currency.USD) {
-            if (amount < 1000) commission = 5;
-            else commission = 7;
-        } else {
-            //if (amount < 1000) commission = 5;
-            //else commission = 7;
-            return 0;
+            if (amount <= 1000) commission = 0.05;
+            else commission = 0.07;
+        } else if (getCurrency() == Currency.EUR){
+                if (amount <= 1000) commission = 0.06;
+            else commission = 0.08;
+            //return 0;
         }
         return commission;
     }

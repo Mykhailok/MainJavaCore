@@ -81,13 +81,13 @@ public abstract class Bank {
 
     abstract int getLimitOfFunding();
 
-    abstract int getMonthlyRate();
+    abstract double getMonthlyRate();
 
     double moneyPaidMonthlyForSalary() {
         return 0;
     }
 
-    abstract int getCommission(int summ);
+    abstract double getCommission(int summ);
 
     abstract int getLimitOfWithdrawal();
 

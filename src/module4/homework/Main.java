@@ -3,7 +3,7 @@ package module4.homework;
 public class Main {
     public static void main(String[] args) {
         //BankSystemImpl -> User -> Bank
-        Bank usBank = new USBank();
+        Bank usBank = new USBank(Currency.EUR, 111, "USA", 10, 1000, 1, 100000);
         usBank.setCurrency(Currency.EUR);
 
         User user = new User();
