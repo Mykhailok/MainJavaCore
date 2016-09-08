@@ -2,6 +2,7 @@ package module4.homework;
 
 
 public class BankSystemImpl implements BankSystem {
+
     @Override
     public void withdrawOfUser(User user, int amount) {
         Bank userBank = user.getBank();
@@ -30,4 +31,9 @@ public class BankSystemImpl implements BankSystem {
     public void paySalary(User user) {
         //user balance + salary - commision
     }
+
+
+
+
+
 }

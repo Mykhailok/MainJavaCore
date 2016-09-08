@@ -97,6 +97,10 @@ public abstract class Bank {
     }
 
 
+    public Bank(long totalCapital) {
+        this.totalCapital = totalCapital;
+    }
+
     @Override
     public String toString() {
         return "Bank{" +
