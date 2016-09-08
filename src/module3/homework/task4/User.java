@@ -86,8 +86,8 @@ public class User {
 
     }
 
-    public void companyNameLenght() {
-        companyName = String.valueOf(companyName.length());
+    public int companyNameLenght() {
+        return companyName.length();
     }
 
     public void monthIncreaser(int addMonth){
