@@ -41,14 +41,18 @@ public class BankSystemImpl implements BankSystem {
                 double newBalanceFromUser = fromUser.getBalance() - amount - amount*fromUserCommission;
 
                     fromUser.setBalance(newBalanceFromUser);
+                if ((toUserBank.getLimitOfFunding() <= amount - amount*toUserCommission) && (fromUser.getBalance() > 0)) {
+                    double newBalanceToUser = toUser.getBalance() + amount;
+                    toUser.setBalance(newBalanceToUser);
+                }
 
             }
 
 
-            if ((toUserBank.getLimitOfFunding() <= amount - amount*toUserCommission) && (fromUser.getBalance() > 0)) {
-                double newBalanceToUser = toUser.getBalance() + amount;
-                toUser.setBalance(newBalanceToUser);
-            }
+//            if ((toUserBank.getLimitOfFunding() <= amount - amount*toUserCommission) && (fromUser.getBalance() > 0)) {
+//                double newBalanceToUser = toUser.getBalance() + amount;
+//                toUser.setBalance(newBalanceToUser);
+//            }
         //fromUser balance - amount - commission
         //toUser balance + amount
     }
