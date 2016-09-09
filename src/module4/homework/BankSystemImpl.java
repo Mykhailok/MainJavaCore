@@ -11,7 +11,10 @@ public class BankSystemImpl implements BankSystem {
         if (userBank.getLimitOfWithdrawal() >= amount + amount * commission) {
             //do logic if rules allow
             double newBalance = user.getBalance() - amount - amount * commission;
-            user.setBalance(newBalance);
+            if (newBalance >= 0){
+                user.setBalance(newBalance);
+            }
+            else System.out.println("Отрицательный баланс!!!");
         }
     }
 
@@ -47,14 +50,11 @@ public class BankSystemImpl implements BankSystem {
     }
 
     @Override
-    public void paySalary(User user, int amount) {
+    public void paySalary(User user) {
         //user balance + salary - commision
-        Bank userBank = user.getBank();
-        double newBalance = user.getBalance() + user.getSalary() - userBank.getCommission(amount);
+        //Bank userBank = user.getBank();
+        double newBalance = user.getBalance() + user.getSalary(); //- userBank.getCommission(amount);
         user.setBalance(newBalance);
-
-
-
     }
 
 
