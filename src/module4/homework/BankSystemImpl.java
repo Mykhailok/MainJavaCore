@@ -7,7 +7,7 @@ public class BankSystemImpl implements BankSystem {
     public void withdrawOfUser(User user, int amount) {
         Bank userBank = user.getBank();
 
-        double commission = userBank.getCommission(amount) / 100; //5 -> 0.05
+        double commission = userBank.getCommission(amount);
         if (userBank.getLimitOfWithdrawal() >= amount + amount * commission) {
             //do logic if rules allow
             double newBalance = user.getBalance() - amount - amount * commission;
@@ -17,19 +17,44 @@ public class BankSystemImpl implements BankSystem {
 
     @Override
     public void fundUser(User user, int amount) {
+        Bank userBank = user.getBank();
+        double commission = userBank.getCommission(amount);
         //if limit is ok - do funding - if no do nothing
+        if (userBank.getLimitOfWithdrawal() >= amount + amount * commission) {
+            double newBalance = user.getBalance() + amount;
+        user.setBalance(newBalance);
+    }
+
 
     }
 
     @Override
     public void transferMoney(User fromUser, User toUser, int amount) {
+        Bank fromUserBank = fromUser.getBank();
+        Bank toUserBank = toUser.getBank();
+        double fromUserCommission = fromUserBank.getCommission(amount);
+        double toUserCommission = toUserBank.getCommission(amount);
+            if (fromUserBank.getLimitOfWithdrawal() >= amount + amount*fromUserCommission){
+                double newBalanceFromUser = fromUser.getBalance() - amount - amount*fromUserCommission;
+                    fromUser.setBalance(newBalanceFromUser);
+            }
+            if (toUserBank.getLimitOfFunding() <= amount - amount*toUserCommission){
+                double newBalanceToUser = toUser.getBalance() + amount;
+                toUser.setBalance(newBalanceToUser);
+            }
         //fromUser balance - amount - commission
         //toUser balance + amount
     }
 
     @Override
-    public void paySalary(User user) {
+    public void paySalary(User user, int amount) {
         //user balance + salary - commision
+        Bank userBank = user.getBank();
+        double newBalance = user.getBalance() + user.getSalary() - userBank.getCommission(amount);
+        user.setBalance(newBalance);
+
+
+
     }
 
 
