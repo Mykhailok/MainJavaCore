@@ -35,7 +35,7 @@ public class Room {
 
     @Override
     public int hashCode() {
-        int result = (int) (id ^ (id >>> 32));
+        int result =  persons ^ (persons >>> 8);
         result = 31 * result + price;
         result = 31 * result + (cityName != null ? cityName.hashCode() : 0);
         return result;
