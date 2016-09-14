@@ -13,13 +13,21 @@ public class Room {
 
     @Override
     public boolean equals(Object object) {
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
+        if (this == object) {
+            return true;
+        }
+        if (object == null || getClass() != object.getClass()){
+            return false;
+        }
 
         Room room = (Room) object;
 
-        if (id != room.id) return false;
-        if (price != room.price) return false;
+        if (persons != room.persons){
+            return false;
+        }
+        if (price != room.price){
+            return false;
+        }
         return cityName.equals(room.cityName);
 
         //null.methods - as a result nullPointerException
