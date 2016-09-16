@@ -1,5 +1,8 @@
 package module5.HW;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Controller {
     private API[] apis = new API[3];
 
@@ -13,44 +16,32 @@ public class Controller {
 
     }
 
-    public Controller(API[] apis) {
-        this.apis = apis;
-    }
+//    public Controller(API[] apis) {
+//        this.apis = apis;
+//    }
 
     Room[] requestRooms(int price, int persons, String city, String hotel) {
-        //creating array !!!BAD PRACTICE TO CREATE HERE
+
         BookingComAPI bookingComAPI = new BookingComAPI();
         GoogleAPI googleAPI = new GoogleAPI();
         TripAdvisorAPI tripAdvisorAPI = new TripAdvisorAPI();
 
-        //apis[0] = bookingComAPI;
-
-
-        //using
         Room[] resBookingCom = bookingComAPI.findRooms(price, persons, city, hotel);
-        Room[] resGoogle = bookingComAPI.findRooms(price, persons, city, hotel);
-        Room[] resTripAdvisor = bookingComAPI.findRooms(price, persons, city, hotel);
+        Room[] resGoogle = googleAPI.findRooms(price, persons, city, hotel);
+        Room[] resTripAdvisor = tripAdvisorAPI.findRooms(price, persons, city, hotel);
 
-        //another logic
-        //Room[] res1 = new Room[];
+        int length = resBookingCom.length + resGoogle.length + resTripAdvisor.length;
+        Room[] arrayRooms = new Room[length];
 
-        //for(int i = 0 ; i < 10; i ++) {
-        //    res1[]
-        //}
+        //List < Room > result = new ArrayList<>();
 
-
-
-        //Room[] rooms = new Room[1000];
-
-        /*int roomsCount = 0;
-
-        if(true) {
-            roomsCount++;
-        }*/
-
-        return null;
-
+       //for (Room count : result) {
+        //   result.add(count);
+       //}
+         return arrayRooms;
+        //return result.toArray(new Room[result.size()]);
     }
+
 
     Room save(Room room) {
         DAOHardImpl daoHard = new DAOHardImpl();

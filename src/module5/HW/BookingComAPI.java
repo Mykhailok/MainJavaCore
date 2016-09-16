@@ -34,7 +34,7 @@ public class BookingComAPI implements API {
         List < Room > result = new ArrayList<>();
 
         if (toSearch.getPrice()==0 && toSearch.getPersons() == 0 && !"null".equals(toSearch.getHotelName()) && !"null".equals(toSearch.getCityName())){
-            System.out.println("All nulls" + rooms.length);
+            //System.out.println("All nulls" + rooms.length);
             return rooms;
 
         }
