@@ -20,12 +20,16 @@ public class Controller {
     Room[] requestRooms(int price, int persons, String city, String hotel) {
         //creating array !!!BAD PRACTICE TO CREATE HERE
         BookingComAPI bookingComAPI = new BookingComAPI();
+        GoogleAPI googleAPI = new GoogleAPI();
+        TripAdvisorAPI tripAdvisorAPI = new TripAdvisorAPI();
+
         //apis[0] = bookingComAPI;
 
 
         //using
-        Room[] res = bookingComAPI.findRooms(price, persons, city, hotel);
-
+        Room[] resBookingCom = bookingComAPI.findRooms(price, persons, city, hotel);
+        Room[] resGoogle = bookingComAPI.findRooms(price, persons, city, hotel);
+        Room[] resTripAdvisor = bookingComAPI.findRooms(price, persons, city, hotel);
 
         //another logic
         //Room[] res1 = new Room[];
