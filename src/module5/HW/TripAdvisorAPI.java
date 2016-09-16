@@ -26,15 +26,21 @@ public class TripAdvisorAPI implements API {
     public Room[] findRooms(int price, int persons, String city, String hotel) {
         Room toSearch = new Room(-1, price, persons, null, city, hotel);
         List < Room > result = new ArrayList<>();
+
+        if (toSearch.getPrice()==0 && toSearch.getPersons() == 0 && !"null".equals(toSearch.getHotelName()) && !"null".equals(toSearch.getCityName())){
+            //System.out.println("All nulls" + rooms.length);
+            return rooms;
+
+        }
+
         for (Room room : rooms) {
-            if (room.equals(toSearch) && (room.getPrice() != 0) && (room.getPersons() != 0)
-                    && (!"null".equals(room.getCityName()) && (!"null".equals(room.getHotelName()))) ) {
+
+            if (room.equals(toSearch) ) {
                 result.add(room);
             }
-            else {
-                return rooms;
-            }
+
         }
+
         return result.toArray(new Room[result.size()]);
     }
 

@@ -6,8 +6,11 @@ public class Controller {
     public Controller() {
         BookingComAPI bookingComAPI = new BookingComAPI();
         apis[0] = bookingComAPI;
+        GoogleAPI googleAPI = new GoogleAPI();
+        apis[1] = googleAPI;
+        TripAdvisorAPI tripAdvisorAPI = new TripAdvisorAPI();
+        apis[2] = tripAdvisorAPI;
 
-        //....
     }
 
     public Controller(API[] apis) {
@@ -15,9 +18,9 @@ public class Controller {
     }
 
     Room[] requestRooms(int price, int persons, String city, String hotel) {
-        //crerating array !!!BAD PRACTICE TO CREATE HERE
+        //creating array !!!BAD PRACTICE TO CREATE HERE
         BookingComAPI bookingComAPI = new BookingComAPI();
-        apis[0] = bookingComAPI;
+        //apis[0] = bookingComAPI;
 
 
         //using

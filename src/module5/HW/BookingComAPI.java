@@ -25,22 +25,33 @@ public class BookingComAPI implements API {
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
 
+//        if (rooms.equals(findRooms(0,0,null,null))){
+//            return rooms;
+//        }
+
         Room toSearch = new Room(-1, price, persons, null, city, hotel);
+
         List < Room > result = new ArrayList<>();
-        for (Room room : rooms) {
-            if (room.equals(toSearch) && (room.getPrice() != 0) && (room.getPersons() != 0)
-                    && (!"null".equals(room.getCityName()) && (!"null".equals(room.getHotelName()))) ) {
-                result.add(room);
-            }
-            else {
-                return rooms;
-            }
+
+        if (toSearch.getPrice()==0 && toSearch.getPersons() == 0 && !"null".equals(toSearch.getHotelName()) && !"null".equals(toSearch.getCityName())){
+            //System.out.println("All nulls" + rooms.length);
+            return rooms;
+
         }
-        return result.toArray(new Room[result.size()]);
-    }
+            for (Room room : rooms) {
+
+                if (room.equals(toSearch) ) {
+                    result.add(room);
+                }
+            }
+            return result.toArray(new Room[result.size()]);
+
+        }
+
+}
 
 //    @Override
 //    public Room[] getAll() {
 //        return new Room[0];
 //    }
-}
+//}
