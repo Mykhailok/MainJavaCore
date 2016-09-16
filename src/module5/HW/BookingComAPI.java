@@ -28,12 +28,14 @@ public class BookingComAPI implements API {
         Room toSearch = new Room(-1, price, persons, null, city, hotel);
         List < Room > result = new ArrayList<>();
         for (Room room : rooms) {
-            if (room.equals(toSearch)){
+            if (room.equals(toSearch) && (room.getPrice() != 0) && (room.getPersons() != 0)
+                    && (!"null".equals(room.getCityName()) && (!"null".equals(room.getHotelName()))) ) {
                 result.add(room);
             }
+            else {
+                return rooms;
+            }
         }
-        //logic - implementations
-
         return result.toArray(new Room[result.size()]);
     }
 

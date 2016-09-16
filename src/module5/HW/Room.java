@@ -47,6 +47,7 @@ public class Room {
         int result =  persons ^ (persons >>> 8);
         result = 31 * result + price;
         result = 31 * result + (cityName != null ? cityName.hashCode() : 0);
+        result = 31 * result + (hotelName != null ? hotelName.hashCode() : 0);
         return result;
     }
 

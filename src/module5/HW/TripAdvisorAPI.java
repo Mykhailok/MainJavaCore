@@ -1,5 +1,8 @@
 package module5.HW;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TripAdvisorAPI implements API {
 
     private Room[] rooms = new Room[5];
@@ -21,7 +24,18 @@ public class TripAdvisorAPI implements API {
 
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-        return new Room[5];
+        Room toSearch = new Room(-1, price, persons, null, city, hotel);
+        List < Room > result = new ArrayList<>();
+        for (Room room : rooms) {
+            if (room.equals(toSearch) && (room.getPrice() != 0) && (room.getPersons() != 0)
+                    && (!"null".equals(room.getCityName()) && (!"null".equals(room.getHotelName()))) ) {
+                result.add(room);
+            }
+            else {
+                return rooms;
+            }
+        }
+        return result.toArray(new Room[result.size()]);
     }
 
 //    @Override
