@@ -9,5 +9,5 @@ public interface DAO {
 
     Room findById(long id);
 
-    Room[] getAll();
+    //Room[] getAll();
 }
