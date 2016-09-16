@@ -27,13 +27,16 @@ public class GoogleAPI implements API {
         Room toSearch = new Room(-1, price, persons, null, city, hotel);
         List < Room > result = new ArrayList<>();
         for (Room room : rooms) {
-            if (room.equals(toSearch) && (room.getPrice() != 0) && (room.getPersons() != 0)
-                    && (!"null".equals(room.getCityName()) && (!"null".equals(room.getHotelName()))) ) {
-                result.add(room);
-            }
-            else {
+
+            if ((room.getPrice() != 0) && (room.getPersons() != 0)
+                    && (!"null".equals(room.getCityName()) && (!"null".equals(room.getHotelName())))) {
                 return rooms;
             }
+
+            else if (room.equals(toSearch) ) {
+                result.add(room);
+            }
+
         }
         return result.toArray(new Room[result.size()]);
     }
