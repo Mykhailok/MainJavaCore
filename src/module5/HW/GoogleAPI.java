@@ -1,6 +1,7 @@
 package module5.HW;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class GoogleAPI implements API {
@@ -9,18 +10,20 @@ public class GoogleAPI implements API {
 
     public GoogleAPI() {
 
-        Room room1 = new Room(1, 500, 2, API.getDateWithShift(ONE_DAY_SHIFT), "Hayat", "Kyiv");
+        Room room1 = new Room(10, 500, 2, API.getDateWithShift(ONE_DAY_SHIFT), "Hayat", "Kyiv");
         rooms[0] = room1;
-        Room room2 = new Room(2, 1000, 3, API.getDateWithShift(ONE_DAY_SHIFT), "Lybid", "Kyiv");
+        Room room2 = new Room(20, 1000, 3, API.getDateWithShift(ONE_DAY_SHIFT), "Lybid", "Kyiv");
         rooms[1] = room2;
-        Room room3 = new Room(3, 1700, 2, API.getDateWithShift(ONE_DAY_SHIFT), "Hayat", "Kyiv");
+        Room room3 = new Room(30, 1700, 2, API.getDateWithShift(ONE_DAY_SHIFT), "Hayat", "Kyiv");
         rooms[2] = room3;
-        Room room4 = new Room(4, 2200, 1, API.getDateWithShift(ONE_DAY_SHIFT), "Hayat", "Kyiv");
+        Room room4 = new Room(40, 2200, 1, API.getDateWithShift(ONE_DAY_SHIFT), "Hayat", "Kyiv");
         rooms[3] = room4;
-        Room room5 = new Room(5, 2500, 4, API.getDateWithShift(ONE_DAY_SHIFT), "Odessa", "Odessa");
+        Room room5 = new Room(50, 2500, 4, API.getDateWithShift(ONE_DAY_SHIFT), "Odessa", "Odessa");
         rooms[4] = room5;
 
     }
+
+
 
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {

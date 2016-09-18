@@ -20,6 +20,18 @@ public class Room {
     }
 
     @Override
+    public String toString() {
+        return "Room{" +
+                "id=" + id +
+                ", price=" + price +
+                ", persons=" + persons +
+                ", dateAvailableFrom=" + dateAvailableFrom +
+                ", hotelName='" + hotelName + '\'' +
+                ", cityName='" + cityName + '\'' +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object object) {
         if (this == object) {
             return true;
@@ -37,7 +49,7 @@ public class Room {
             return false;
         }
 
-        return cityName.equals(room.cityName) && this.hotelName.equals(room.getHotelName()) ;
+        return cityName.equals(room.cityName) && this.hotelName.equals(room.hotelName) ;
 
         //null.methods - as a result nullPointerException
     }

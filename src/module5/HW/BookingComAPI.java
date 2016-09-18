@@ -1,6 +1,7 @@
 package module5.HW;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class BookingComAPI implements API {
@@ -21,6 +22,8 @@ public class BookingComAPI implements API {
         rooms[4] = room5;
 
     }
+
+
 
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {

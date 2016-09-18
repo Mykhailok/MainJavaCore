@@ -7,8 +7,17 @@ public class Main {
         //bookingComAPI.findRooms(500,2,"Hayat", "Kyiv");
         //bookingComAPI.findRooms(0,0,null, null);
         //System.out.println("All good " + bookingComAPI);
-        Controller resBooking = new Controller();
-        System.out.println(resBooking.requestRooms(500,2,"Hayat", "Kyiv"));
+        Controller controller = new Controller();
+
+        //controller.requestRooms(500,2,"Hayat", "Kyiv");
+        //System.out.println(controller.toString());
+        Room[] res =  controller.check(new BookingComAPI(),new GoogleAPI());
+        System.out.println(res.toString());
+
+
+
+
+
 
     }
 }
