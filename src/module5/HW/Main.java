@@ -16,13 +16,13 @@ public class Main {
 
 
         Room[] res =  controller.check(new BookingComAPI(),new GoogleAPI());
-        System.out.println(res);
+        System.out.println(res.length);
 
         Room[] res2 =  controller.check(new BookingComAPI(),new TripAdvisorAPI());
-        System.out.println(res2);
+        System.out.println(res2.length);
 
         Room[] res3 =  controller.check(new GoogleAPI(),new TripAdvisorAPI());
-        System.out.println(res3);
+        System.out.println(res3.length);
 
 
 

@@ -6,9 +6,9 @@ import java.util.List;
 public class Controller {
     private API[] apis = new API[3];
     private List < Room > result = new ArrayList<>();
-    //private List < Room > resultcheck1 = new ArrayList<>();
-    //private List < Room > resultcheck2 = new ArrayList<>();
-    //private List < Room > resultcheck = new ArrayList<>();
+    private List < Room > resultcheck1 = new ArrayList<>();
+    private List < Room > resultcheck2 = new ArrayList<>();
+    private List < Room > resultcheck = new ArrayList<>();
     public Controller() {
         BookingComAPI bookingComAPI = new BookingComAPI();
         apis[0] = bookingComAPI;
@@ -75,19 +75,24 @@ public class Controller {
     Room[] check(API api1, API api2) {
         Room[] res1 = api1.findRooms(500,2, "Hayat", "Kyiv");
         Room[] res2 = api2.findRooms(500,2, "Hayat", "Kyiv");
-        int i, j;
         Room[] resultApi1 = new Room[res1.length];
         Room[] resultApi2 = new Room[res2.length];
 
-        for (i=0, i<res1.length,i++){
+        for (int i = 0; i < res1.length; i++){
             resultApi1[i] = res1[i];
         }
 
-        return null;
+        for (int j = 0; j < res2.length; j++){
+            if (resultApi1[j].equals(res2[j])){
+                resultApi2[j] = res2[j];
+            }
+        }
+
+        return resultApi2;
 
 
 
-        //return resultcheck.toArray(new Room[resultcheck.size()]);
+        //return resultcheck.toArray(new Room[resultcheck1.size()]);
     }
 
 }
