@@ -85,6 +85,7 @@ public class Controller {
             for (Room count : res2) {
                 if (!resultcheck2.equals(resultcheck1)){
                     resultcheck2.add(count);
+
                     System.out.println(resultcheck2);
                 }
 

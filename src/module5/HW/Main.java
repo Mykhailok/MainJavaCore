@@ -9,10 +9,20 @@ public class Main {
         //System.out.println("All good " + bookingComAPI);
         Controller controller = new Controller();
 
-        //controller.requestRooms(500,2,"Hayat", "Kyiv");
-        //System.out.println(controller.toString());
+        controller.requestRooms(500,2,"Hayat", "Kyiv");
+        controller.requestRooms(1600,4,"Hayat", "Kyiv");
+        controller.requestRooms(2500,2,"Hayat", "Kyiv");
+        System.out.println(controller.toString());
+
+
         Room[] res =  controller.check(new BookingComAPI(),new GoogleAPI());
-        System.out.println(res.toString());
+        System.out.println(res);
+
+        Room[] res2 =  controller.check(new BookingComAPI(),new TripAdvisorAPI());
+        System.out.println(res2);
+
+        Room[] res3 =  controller.check(new GoogleAPI(),new TripAdvisorAPI());
+        System.out.println(res3);
 
 
 
