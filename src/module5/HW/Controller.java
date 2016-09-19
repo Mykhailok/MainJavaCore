@@ -6,9 +6,6 @@ import java.util.List;
 public class Controller {
     private API[] apis = new API[3];
     private List < Room > result = new ArrayList<>();
-    private List < Room > resultcheck1 = new ArrayList<>();
-    private List < Room > resultcheck2 = new ArrayList<>();
-    private List < Room > resultcheck = new ArrayList<>();
     public Controller() {
         BookingComAPI bookingComAPI = new BookingComAPI();
         apis[0] = bookingComAPI;
@@ -25,9 +22,6 @@ public class Controller {
                 "result=" + result +
                 '}';
     }
-    //    public Controller(API[] apis) {
-//        this.apis = apis;
-//    }
 
     Room[] requestRooms(int price, int persons, String city, String hotel) {
 
@@ -41,8 +35,6 @@ public class Controller {
 
         //int length = resBookingCom.length + resGoogle.length + resTripAdvisor.length;
         //Room[] arrayRooms = new Room[length];
-
-
 
             for (Room count : resBookingCom) {
                 result.add(count);
@@ -58,19 +50,14 @@ public class Controller {
                 result.add(count);
                 save(count);
             }
-
        //return arrayRooms;
-
         return result.toArray(new Room[result.size()]);
     }
-
 
     Room save(Room room) {
         DAOHardImpl daoHard = new DAOHardImpl();
         return daoHard.save(room);
     }
-
-
 
     Room[] check(API api1, API api2) {
         Room[] res1 = api1.findRooms(500,2, "Hayat", "Kyiv");
@@ -87,11 +74,7 @@ public class Controller {
                 resultApi2[j] = res2[j];
             }
         }
-
         return resultApi2;
-
-
-
         //return resultcheck.toArray(new Room[resultcheck1.size()]);
     }
 
