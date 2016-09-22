@@ -24,7 +24,7 @@ public class BookingComAPI implements API {
     public Room[] findRooms(int price, int persons, String city, String hotel) {
 
         Room toSearch = new Room(-1, price, persons, null, city, hotel);
-
+        Room[] arrayOfRooms = new Room[1000];
         List < Room > result = new ArrayList<>();
 
         if (toSearch.getPrice()==0 && toSearch.getPersons() == 0 && !"null".equals(toSearch.getHotelName()) && !"null".equals(toSearch.getCityName())){
@@ -39,6 +39,21 @@ public class BookingComAPI implements API {
             return result.toArray(new Room[result.size()]);
         }
 
+        //Static arrays---------------------------------------------------------------------
+
+        /*if (toSearch.getPrice() == 0 && toSearch.getPersons() == 0 && !"null".equals(toSearch.getHotelName())
+                && !"null".equals(toSearch.getCityName())) {
+            return rooms;
+        }
+
+        for (int i = 0; i < rooms.length; i++){
+            if (rooms[i].equals(toSearch)){
+                arrayOfRooms[i] = rooms[i];
+            }
+        }
+
+        return arrayOfRooms;
+    }*/
 }
 
 //    @Override

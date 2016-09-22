@@ -19,30 +19,40 @@ public class TripAdvisorAPI implements API {
         rooms[3] = room4;
         Room room5 = new Room(500, 2500, 2, API.getDateWithShift(ONE_DAY_SHIFT), "Odessa", "Odessa");
         rooms[4] = room5;
-
     }
 
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
         Room toSearch = new Room(-1, price, persons, null, city, hotel);
+        Room[] arrayOfRooms = new Room[1000];
         List < Room > result = new ArrayList<>();
 
         if (toSearch.getPrice()==0 && toSearch.getPersons() == 0 && !"null".equals(toSearch.getHotelName()) && !"null".equals(toSearch.getCityName())){
-            //System.out.println("All nulls" + rooms.length);
             return rooms;
-
         }
-
         for (Room room : rooms) {
-
             if (room.equals(toSearch) ) {
                 result.add(room);
             }
-
         }
-
         return result.toArray(new Room[result.size()]);
     }
+
+        //Static arrays----------------------------------------------------------------------
+
+        /*if (toSearch.getPrice() == 0 && toSearch.getPersons() == 0 && !"null".equals(toSearch.getHotelName())
+                && !"null".equals(toSearch.getCityName())) {
+            return rooms;
+        }
+
+        for (int i = 0; i < rooms.length; i++){
+            if (rooms[i].equals(toSearch)){
+                arrayOfRooms[i] = rooms[i];
+            }
+        }
+
+        return arrayOfRooms;
+    }*/
 
 //    @Override
 //    public Room[] getAll() {
