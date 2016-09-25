@@ -1,5 +1,7 @@
 package module2.homework;
 
+import module6.HW.ArrayUtils;
+
 public class HW2_1 {
     static int[] arrayInt = {-16, 134, 3460, -4246, 5346, 436, 2344, 150, 25, 0};
     static double[] arrayDouble = {-1435, 134, 3461, -4246, 5346, 436, 2344, 150, 25, 987};
@@ -147,7 +149,7 @@ public class HW2_1 {
 
 
     public static void main(String[] args) {
-        int sumInt = calculateSumInt(arrayInt);
+        int sumInt = ArrayUtils.sum(arrayInt);
         System.out.println("Сумма массива в arrayInt = "+ sumInt);
 
 
@@ -155,11 +157,11 @@ public class HW2_1 {
         System.out.println("Сумма массива в arrayDouble = "+ sumDouble);
 
 
-        int calculateMinInt = calculateMinInt(arrayInt);
+        int calculateMinInt = ArrayUtils.min(arrayInt);
         System.out.println("Минимальное число в массиве arrayInt = " + calculateMinInt);
 
 
-        int calculateMaxInt = calculateMaxInt(arrayInt);
+        int calculateMaxInt = ArrayUtils.max(arrayInt);
         System.out.println("Максимальное число в массиве arrayInt = " + calculateMaxInt);
 
 
@@ -171,11 +173,11 @@ public class HW2_1 {
         System.out.println("Максимальное число в массиве arrayMaxPositiveDouble = " + calculateMaxDouble);
 
 
-        int calculateMaxPositiveInt = calculateMaxPositiveInt(arrayMaxPositiveInt);
-            if (calculateMaxInt(arrayMaxPositiveInt) < 0){
+        int calculateMaxPositiveInt = ArrayUtils.maxPositive(arrayMaxPositiveInt);
+            if (ArrayUtils.max(arrayMaxPositiveInt) < 0){
                 System.out.println("Максимального положительного числа в массиве arrayMaxPositiveInt нет");
         }
-            else if (calculateMaxInt(arrayMaxPositiveInt) == 0) {
+            else if (ArrayUtils.max(arrayMaxPositiveInt) == 0) {
                 System.out.println("Максимально положительное число в массиве arrayMaxPositiveInt равно 0");
         }
             else
@@ -191,11 +193,11 @@ public class HW2_1 {
         else
             System.out.println("Максимальное положительное число в массиве arrayMaxPositiveDouble = " + calculateMaxPositiveDouble);
 
-        System.out.println("Умножение всех чисел массива arrayLong = " + multiplicationLong(arrayLong));
+        System.out.println("Умножение всех чисел массива arrayLong = " + ArrayUtils.multiplication(arrayLong));
         System.out.println("Умножение всех чисел массива arrayDouble = " + multiplicationDouble(arrayDouble));
-        modulus(arrayInt);
+        ArrayUtils.modulus(arrayInt);
         modulusD(arrayDouble);
-        System.out.println("Второе максимальное число в массиве arrayInt = " + secondLargest(arrayInt));
+        System.out.println("Второе максимальное число в массиве arrayInt = " + ArrayUtils.secondLargest(arrayInt));
         System.out.println("Второе максимальное число в массиве arrayDouble = " + secondLargestD(arrayDouble));
     }
 

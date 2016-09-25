@@ -1,5 +1,7 @@
 package module6.HW;
 
+import java.util.ArrayList;
+
 public class ArrayUtils {
 
     public static final int sum(int[] arrayInt) {
@@ -75,23 +77,19 @@ public class ArrayUtils {
             array[i] = array[array.length-(1+i)];
             array[array.length-(1+i)] = temp;
         }
-
         return array;
     }
 
-    public static final int[] findEvenElements(int[] array) {
-        //int[] findResult = new int[array.length];
+    public static final ArrayList findEvenElements(int[] array) {
+
+        ArrayList result = new ArrayList();
 
         for (int i = 0; i < array.length; i++) {
             int temp = array[i];
             if ((temp % 2 == 0) && (temp != 0)) {
-
-                    temp = array[i];
-
-                System.out.println("Четные элементы массива: " + temp);
+                 result.add(temp);
             }
         }
-        return array;
+        return result;
     }
-
 }

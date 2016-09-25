@@ -6,9 +6,9 @@ public class Main {
     static int[] array = {1, 2, 3, 4};
 
     public static void main(String[] args) {
-
-        //System.out.println(Arrays.toString(ArrayUtils.reverse(array)));
-        System.out.println(Arrays.toString(ArrayUtils.findEvenElements(array)));
+        System.out.println("Исходный массив: " + Arrays.toString(array));
+        System.out.println("Перевернутый массив: " + Arrays.toString(ArrayUtils.reverse(array)));
+        System.out.println("Четные элементы массива: " + ArrayUtils.findEvenElements(array));
     }
 
 }
