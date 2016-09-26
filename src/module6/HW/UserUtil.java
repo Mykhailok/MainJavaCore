@@ -1,14 +1,14 @@
 package module6.HW;
 
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class UserUtil {
 
     public static User[] uniqueUsers(User[] users) {
         User[] result = new User[users.length];
-        for (int i = 0; i < users.length; i++) {
-            if (users[i+1].equals(users[i])){
-                result[i] = users[i];
-            }
-        }
+
 
         return result;
     }

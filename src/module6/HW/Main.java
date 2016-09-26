@@ -12,7 +12,7 @@ public class Main {
     public Main(){
         User user1 = new User(1001, "FirstName", "LastName", 1000, 1000);
         users[0] = user1;
-        User user2 = new User(1002, "FirstName2", "LastName2", 2000, 2000);
+        User user2 = new User(1001, "FirstName", "LastName", 1000, 1000);
         users[1] = user2;
         User user3 = new User(1003, "FirstName3", "LastName3", 3000, 3000);
         users[2] = user3;
@@ -26,10 +26,11 @@ public class Main {
 
     public static void main(String[] args) {
         new Main();
-        System.out.println("Исходный массив: " + Arrays.toString(array));
-        System.out.println("Перевернутый массив: " + Arrays.toString(ArrayUtils.reverse(array)));
-        System.out.println("Четные элементы массива: " + Arrays.toString(ArrayUtils.findEvenElements(array)));
+        //System.out.println("Исходный массив: " + Arrays.toString(array));
+        //System.out.println("Перевернутый массив: " + Arrays.toString(ArrayUtils.reverse(array)));
+        //System.out.println("Четные элементы массива: " + Arrays.toString(ArrayUtils.findEvenElements(array)));
         System.out.println(Arrays.toString(UserUtil.uniqueUsers(users)));
+
 
     }
 
