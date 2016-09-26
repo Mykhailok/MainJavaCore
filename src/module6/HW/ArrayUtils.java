@@ -80,7 +80,7 @@ public final class ArrayUtils {
         return array;
     }
 
-    public static final ArrayList findEvenElements(int[] array) {
+    public static final int[] findEvenElements(int[] array) {
 
         ArrayList result = new ArrayList();
 
@@ -90,6 +90,10 @@ public final class ArrayUtils {
                  result.add(temp);
             }
         }
-        return result;
+        int[] stringResult = new int[result.size()];
+        for (int i = 0; i < result.size(); i++){
+            stringResult[i] = (int) result.get(i);
+        }
+        return stringResult;
     }
 }
