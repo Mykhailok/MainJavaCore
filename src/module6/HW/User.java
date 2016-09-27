@@ -20,6 +20,26 @@ public class User {
         return balance;
     }
 
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
     @Override
     public String toString() {
         return "User{" +

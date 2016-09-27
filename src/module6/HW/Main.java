@@ -12,6 +12,7 @@ public class Main {
     public Main(){
         User user1 = new User(1001, "FirstName", "LastName", 1000, 1000);
         users[0] = user1;
+        //User user2 = new User(0, null, null, 0, 0);
         User user2 = new User(1001, "FirstName", "LastName", 1000, 1000);
         users[1] = user2;
         User user3 = new User(1003, "FirstName3", "LastName3", 3000, 3000);
@@ -26,14 +27,14 @@ public class Main {
 
     public static void main(String[] args) {
         new Main();
-        //System.out.println("Исходный массив: " + Arrays.toString(array));
-        //System.out.println("Перевернутый массив: " + Arrays.toString(ArrayUtils.reverse(array)));
-        //System.out.println("Четные элементы массива: " + Arrays.toString(ArrayUtils.findEvenElements(array)));
+        System.out.println("Исходный массив: " + Arrays.toString(array));
+        System.out.println("Перевернутый массив: " + Arrays.toString(ArrayUtils.reverse(array)));
+        System.out.println("Четные элементы массива: " + Arrays.toString(ArrayUtils.findEvenElements(array)));
         //System.out.println(Arrays.toString(UserUtil.uniqueUsers(users)));
-        System.out.println(Arrays.toString(UserUtil.usersWithContitionalBalance(users, 3000)));
-
-
-
+        //System.out.println(Arrays.toString(UserUtil.usersWithContitionalBalance(users, 3000)));
+        System.out.println(Arrays.toString(UserUtil.paySalaryToUsers(users)));
+        System.out.println(Arrays.toString(UserUtil.getUsersId(users)));
+        System.out.println(Arrays.toString(UserUtil.deleteEmptyUsers(users)));
     }
 
 }
