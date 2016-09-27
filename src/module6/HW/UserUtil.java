@@ -23,11 +23,18 @@ public class UserUtil {
         return (User[]) result.toArray(new User[result.size()]);
     }
 
-    public User[] usersWithContitionalBalance(User[] users, int balance) {
-        return new User[0];
+    public static User[] usersWithContitionalBalance(User[] users, int balance) {
+        ArrayList result = new ArrayList();
+        for (User i : users){
+            if (i.getBalance() == balance){
+                result.add(i);
+            }
+        }
+        return (User[]) result.toArray(new User[result.size()]);
     }
 
     public static final User[] paySalaryToUsers(User[] users) {
+
         return null;
     }
 

@@ -16,6 +16,10 @@ public class User {
         this.balance = balance;
     }
 
+    public int getBalance() {
+        return balance;
+    }
+
     @Override
     public String toString() {
         return "User{" +

@@ -29,7 +29,9 @@ public class Main {
         //System.out.println("Исходный массив: " + Arrays.toString(array));
         //System.out.println("Перевернутый массив: " + Arrays.toString(ArrayUtils.reverse(array)));
         //System.out.println("Четные элементы массива: " + Arrays.toString(ArrayUtils.findEvenElements(array)));
-        System.out.println(Arrays.toString(UserUtil.uniqueUsers(users)));
+        //System.out.println(Arrays.toString(UserUtil.uniqueUsers(users)));
+        System.out.println(Arrays.toString(UserUtil.usersWithContitionalBalance(users, 3000)));
+
 
 
     }
