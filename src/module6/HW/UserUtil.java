@@ -65,7 +65,7 @@ public class UserUtil {
     public static final User[] deleteEmptyUsers(User[] users) {
         ArrayList result = new ArrayList();
         for (User i : users){
-            if (!i.equals(null) && i.getId() != 0 && i.getFirstName() != null
+            if (i != null && i.getId() != 0 && i.getFirstName() != null
                     && i.getLastName() != null && i.getSalary() != 0 && i.getBalance() != 0){
                 result.add(i);
             }
