@@ -1,4 +1,4 @@
-package offline_now.question;
+package module3.offline_now.question;
 
 public class BlackCat extends Cat {
     private String name;

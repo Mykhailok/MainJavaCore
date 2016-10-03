@@ -1,4 +1,4 @@
-package offline_now.question;
+package module3.offline_now.question;
 
 public class Animal {
     private  int weight;

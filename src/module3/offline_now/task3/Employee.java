@@ -1,4 +1,4 @@
-package offline_now.task3;
+package module3.offline_now.task3;
 
 public class Employee extends Person {
     protected String address;
