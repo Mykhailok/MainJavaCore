@@ -29,4 +29,28 @@ public class Order {
                 ", user=" + user +
                 '}';
     }
+
+    public long getId() {
+        return id;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public Currency getCurrency() {
+        return currency;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public String getShopIdentificator() {
+        return shopIdentificator;
+    }
+
+    public User getUser() {
+        return user;
+    }
 }

@@ -2,11 +2,11 @@ package module7.HW;
 
 import java.util.Comparator;
 
-public class DecreaseOrder implements Comparator<Integer> {
+public class DecreaseOrder implements Comparator<Order> {
 
         @Override
-        public int compare(Integer i1, Integer i2) {
-            return i2 - i1;
+        public int compare(Order i1, Order i2) {
+            return i2.getPrice() - i1.getPrice();
         }
     }
 

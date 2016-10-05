@@ -36,11 +36,17 @@ public class Main {
             id++;
             price +=500;
         }
+        System.out.println(orders);
 
+        //sort list by Order price in decrease order
+        orders.sort(new DecreaseOrder());
 
         System.out.println(orders);
 
+        //- sort list by Order price in increase order AND User city
+        orders.sort(new IncreaseOrder());
 
+        System.out.println(orders);
 
 
     }
