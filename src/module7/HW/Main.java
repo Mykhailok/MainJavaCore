@@ -1,6 +1,7 @@
 package module7.HW;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,7 +16,9 @@ public class Main {
 
         int balance = 500;
         List<User> users = new ArrayList<>();
-        //Set<User> users = new TreeSet<>();
+        Set<Order> duplicateOrder = new HashSet<>();
+        Set<Order> UAH = new HashSet<>();
+        Set<Order> USD = new HashSet<>();
         for (int i = 0 ; i < 10; i++) {
             users.add(new User(id,firstName,lastName,city[c],balance));
             id++;
@@ -48,11 +51,41 @@ public class Main {
         orders.sort(new IncreaseOrder());
 
         System.out.println(orders);
-
+        //- sort list by Order itemName AND ShopIdentificator AND User city
         orders.sort(new IncreaseOrderAndCity());
 
         System.out.println(orders);
 
+        orders.sort(new IncreaseItemShopCity());
+
+        System.out.println(orders);
+
+        //- delete duplicates from the list
+//        for (Order searchDuplicate : orders) {
+//            duplicateOrder.add(searchDuplicate);
+//        }
+        duplicateOrder.addAll(orders);
+        System.out.println(duplicateOrder);
+
+        //- delete items where price less than 1500
+        Iterator<Order> iterator = orders.iterator();
+
+        while (iterator.hasNext()){
+            if (iterator.next().getPrice() < 1500) {
+                iterator.remove();
+            }
+        }
+
+        System.out.println(orders);
+
+        //- separate list for two list - orders in USD and UAH
+        UAH.addAll(orders.stream().filter(separateCurrencyUAH -> separateCurrencyUAH.getCurrency() == Currency.UAH).collect(Collectors.toList()));
+
+        USD.addAll(orders.stream().filter(separateCurrencyUSD -> separateCurrencyUSD.getCurrency() == Currency.USD).collect(Collectors.toList()));
+        System.out.println("UAH:");
+        System.out.println(UAH);
+        System.out.println("USD:");
+        System.out.println(USD);
 
     }
 }
