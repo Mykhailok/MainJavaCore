@@ -31,11 +31,12 @@ public class Main {
             id++;
             price +=500;
         }
-        for (int i = 5; i < 10; i++){
+        for (int i = 5; i < 9; i++){
             orders.add(new Order(id, price, Currency.USD, itemName+"2", shopName+"2", users.get(i)));
             id++;
             price +=500;
         }
+        orders.add(new Order(999, 5000, Currency.USD, "Special", "SuperShop", users.get(9)));
         System.out.println(orders);
 
         //sort list by Order price in decrease order
@@ -45,6 +46,10 @@ public class Main {
 
         //- sort list by Order price in increase order AND User city
         orders.sort(new IncreaseOrder());
+
+        System.out.println(orders);
+
+        orders.sort(new IncreaseOrderAndCity());
 
         System.out.println(orders);
 
