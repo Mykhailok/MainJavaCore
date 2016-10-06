@@ -13,7 +13,7 @@ public class IncreaseItemShopCity implements Comparator<Order> {
             return i1.getShopIdentificator().compareTo(i2.getShopIdentificator());
         }
 
-        return i2.getUser().getCity().compareTo(i1.getUser().getCity());
+        return i1.getUser().getCity().compareTo(i2.getUser().getCity());
     }
 
 }

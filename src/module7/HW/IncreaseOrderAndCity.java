@@ -9,7 +9,7 @@ public class IncreaseOrderAndCity implements Comparator<Order> {
         if (i1.getPrice() - i2.getPrice() != 0){
             return i1.getPrice() - i2.getPrice();
         }
-        return i2.getUser().getCity().compareTo(i1.getUser().getCity());
+        return i1.getUser().getCity().compareTo(i2.getUser().getCity());
     }
 
 }
