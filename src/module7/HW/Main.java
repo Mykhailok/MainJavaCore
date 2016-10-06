@@ -82,9 +82,20 @@ public class Main {
         System.out.println(orders);
 
         //- separate list for two list - orders in USD and UAH
-        UAH.addAll(orders.stream().filter(separateCurrencyUAH -> separateCurrencyUAH.getCurrency() == Currency.UAH).collect(Collectors.toList()));
+        for (Order uah : orders){
+            if (uah.getCurrency() == Currency.UAH) {
+                UAH.add(uah);
+            }
+        }
 
-        USD.addAll(orders.stream().filter(separateCurrencyUSD -> separateCurrencyUSD.getCurrency() == Currency.USD).collect(Collectors.toList()));
+        for (Order usd : orders){
+            if (usd.getCurrency() == Currency.USD) {
+                USD.add(usd);
+            }
+        }
+        //UAH.addAll(orders.stream().filter(separateCurrencyUAH -> separateCurrencyUAH.getCurrency() == Currency.UAH).collect(Collectors.toList()));
+
+        //USD.addAll(orders.stream().filter(separateCurrencyUSD -> separateCurrencyUSD.getCurrency() == Currency.USD).collect(Collectors.toList()));
         System.out.println("UAH:");
         System.out.println(UAH);
         System.out.println("USD:");
