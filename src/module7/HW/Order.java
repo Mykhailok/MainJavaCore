@@ -24,13 +24,16 @@ public class Order {
 
         Order order = (Order) o;
 
+        if (!itemName.equals(order.itemName)) return false;
         return shopIdentificator.equals(order.shopIdentificator);
 
     }
 
     @Override
     public int hashCode() {
-        return shopIdentificator.hashCode();
+        int result = itemName.hashCode();
+        result = 31 * result + shopIdentificator.hashCode();
+        return result;
     }
 
     @Override

@@ -19,6 +19,9 @@ public class Main {
         Set<Order> duplicateOrder = new HashSet<>();
         Set<Order> UAH = new HashSet<>();
         Set<Order> USD = new HashSet<>();
+        Set<User> uniqueCity = new HashSet<>();
+        List<Set<User>> result = new ArrayList<>();
+
         for (int i = 0 ; i < 10; i++) {
             users.add(new User(id,firstName,lastName,city[c],balance));
             id++;
@@ -86,6 +89,18 @@ public class Main {
         System.out.println(UAH);
         System.out.println("USD:");
         System.out.println(USD);
+
+        //- separate list for as many lists as many unique cities are in User
+        uniqueCity.addAll(users);
+
+        System.out.println("Unique cities:");
+        System.out.println(uniqueCity);
+
+       for (int i = 0; i < uniqueCity.size(); i++){
+           result.add(uniqueCity);
+       }
+
+        System.out.println(result);
 
     }
 }
