@@ -18,7 +18,10 @@ public class User implements Comparable<User> {
 
     @Override
     public int compareTo(User userToCompare) {
-        return this.getCity().compareTo(userToCompare.getCity());
+        if (this.getCity().compareTo(userToCompare.getCity()) == 0){
+            return 0;
+        }
+        return this.getLastName().compareTo(userToCompare.getLastName()) ;
     }
 
     @Override

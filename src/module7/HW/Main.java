@@ -121,7 +121,7 @@ public class Main {
         treeOrders.add(new Order(998, 5001, Currency.UAH, "Special2", "SuperShop2", users.get(2)));
         treeOrders.add(new Order(997, 5002, Currency.UAH, "Special3", "SuperShop3", users.get(3)));
         treeOrders.add(new Order(996, 5003, Currency.UAH, "Special4", "SuperShop4", users.get(4)));
-        treeOrders.add(new Order(995, 5004, Currency.UAH, "Special5", "SuperShop5", users.get(5)));
+        treeOrders.add(new Order(995, 5100, Currency.UAH, "Special5", "SuperShop5", users.get(5)));
         treeOrders.add(new Order(994, 5005, Currency.USD, "Special6", "SuperShop6", users.get(6)));
         treeOrders.add(new Order(993, 5006, Currency.USD, "Special7", "SuperShop7", users.get(7)));
         treeOrders.add(new Order(992, 5007, Currency.USD, "Special8", "SuperShop8", users.get(8)));
@@ -155,6 +155,19 @@ public class Main {
             }
         }
         System.out.println(orders);
+
+        /*Generate Integer and String ArrayList and LinkedList with 1000 and 10000 elements.
+            Measure time of execution of the following methods and print it to console:
+            - add
+            - set
+            - get
+            - remove*/
+        Methods methods = new Methods();
+        System.out.println("time of execution of the following methods add int are:" + methods.addArrayInt());
+        System.out.println("time of execution of the following methods add string are:" + methods.addArrayStr());
+        System.out.println("time of execution of the following methods add int are:" + methods.addLinkedInt());
+        System.out.println("time of execution of the following methods add string are:" + methods.addLinkedInt());
+
 
     }
 
