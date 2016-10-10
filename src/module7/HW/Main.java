@@ -1,7 +1,6 @@
 package module7.HW;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,12 +21,13 @@ public class Main {
         List<Order> uniqueCity = new ArrayList<>();
         List<List<Order>> result = new ArrayList<>();
 
-        for (int i = 0 ; i < 10; i++) {
+        for (int i = 0 ; i < 9; i++) {
             users.add(new User(id,firstName,lastName,city[c],balance));
             id++;
             c++;
             balance += 500;
         }
+        users.add(new User(007,"Petya","Petrov",city[c],balance));
         System.out.println(users);
 
         List<Order> orders = new ArrayList<>();
@@ -43,6 +43,7 @@ public class Main {
             price +=500;
         }
         orders.add(new Order(999, 5000, Currency.USD, "Special", "SuperShop", users.get(9)));
+
         System.out.println(orders);
 
         //sort list by Order price in decrease order
@@ -111,8 +112,50 @@ public class Main {
         System.out.println("Result:");
         System.out.println(result);
 
+    //----------------------------------Homework 7.3 with users----------------------------------
+        Set<Order> treeOrders = new TreeSet<>();
 
 
+
+        treeOrders.add(new Order(999, 5000, Currency.USD, "Special1", "SuperShop1", users.get(1)));
+        treeOrders.add(new Order(998, 5001, Currency.UAH, "Special2", "SuperShop2", users.get(2)));
+        treeOrders.add(new Order(997, 5002, Currency.UAH, "Special3", "SuperShop3", users.get(3)));
+        treeOrders.add(new Order(996, 5003, Currency.UAH, "Special4", "SuperShop4", users.get(4)));
+        treeOrders.add(new Order(995, 5004, Currency.UAH, "Special5", "SuperShop5", users.get(5)));
+        treeOrders.add(new Order(994, 5005, Currency.USD, "Special6", "SuperShop6", users.get(6)));
+        treeOrders.add(new Order(993, 5006, Currency.USD, "Special7", "SuperShop7", users.get(7)));
+        treeOrders.add(new Order(992, 5007, Currency.USD, "Special8", "SuperShop8", users.get(8)));
+        treeOrders.add(new Order(991, 5008, Currency.USD, "Special9", "SuperShop9", users.get(9)));
+        treeOrders.add(new Order(991, 5008, Currency.USD, "Special9", "SuperShop9", users.get(9)));
+        System.out.println("TreeSet:");
+        System.out.println(treeOrders);
+
+        //- check if set contain Order where User’s lastName is - “Petrov”
+        for (Order checkLastName : treeOrders){
+            if (checkLastName.getUser().getLastName().equals("Petrov")){
+                System.out.println("There is Petrov!!! at user #" + checkLastName.getUser().getId());
+            }
+
+        }
+
+        //- print Order with largest price using only one set method - get
+
+        TreeSet<Order> largestPrice = new TreeSet<>();
+        for (Order largePrice : treeOrders){
+            largestPrice.add(largePrice);
+        }
+
+        System.out.println("Order with largest price: " + largestPrice.last());
+
+        //- delete orders where currency is USD using Iterator
+        Iterator<Order> currencyUSD = orders.iterator();
+        while (currencyUSD.hasNext()){
+            if (currencyUSD.next().getCurrency() == Currency.USD){
+                currencyUSD.remove();
+            }
+        }
+        System.out.println(orders);
 
     }
+
 }
