@@ -32,6 +32,23 @@ public class User implements Comparable<User> {
                 '}';
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+
+        return city.equals(user.city);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return city.hashCode();
+    }
+
     public long getId() {
         return id;
     }
