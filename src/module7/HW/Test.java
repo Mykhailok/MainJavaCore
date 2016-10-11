@@ -23,6 +23,7 @@ public class Test {
         List<User> usersCity = new ArrayList<>();
         List<User> usersCity2 = new ArrayList<>();
         List<String> cities = new ArrayList<>();
+        List<List<User>> result =  new ArrayList<List<User>>();
 
         usersCity.add(new User(10,"FirstName1", "LastName1", "Kyiv", 1001));
         usersCity.add(new User(11,"FirstName2", "LastName2", "Kyiv", 1002));
@@ -44,6 +45,7 @@ public class Test {
             for (User citySeparate : city){
                 if (!cities.contains(citySeparate.getCity())){
                     cities.add(citySeparate.getCity());
+                    result.add(new ArrayList<>());
                 }
 
                 System.out.println(citySeparate.getCity());
@@ -54,6 +56,6 @@ public class Test {
         }
 
         System.out.println(cities);
-
+        System.out.println(result);
     }
 }
