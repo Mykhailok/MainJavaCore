@@ -154,6 +154,7 @@ public class Main {
                 currencyUSD.remove();
             }
         }
+        System.out.println("delete orders where currency is USD using Iterator:");
         System.out.println(orders);
 
         /*Generate Integer and String ArrayList and LinkedList with 1000 and 10000 elements.
@@ -166,9 +167,19 @@ public class Main {
         System.out.println("time of execution of the following methods add int are:" + methods.addArrayInt());
         System.out.println("time of execution of the following methods add string are:" + methods.addArrayStr());
         System.out.println("time of execution of the following methods add int are:" + methods.addLinkedInt());
-        System.out.println("time of execution of the following methods add string are:" + methods.addLinkedInt());
-
-
+        System.out.println("time of execution of the following methods add string are:" + methods.addLinkedStr());
+        System.out.println("time of execution of the following methods set int are:" + methods.setAddArrayInt());
+        System.out.println("time of execution of the following methods set string are:" + methods.setAddArrayStr());
+        System.out.println("time of execution of the following methods set int are:" + methods.setAddLinkedInt());
+        System.out.println("time of execution of the following methods set string are:" + methods.setAddLinkedStr());
+        System.out.println("time of execution of the following methods set int are:" + methods.getAddArrayInt());
+        System.out.println("time of execution of the following methods set string are:" + methods.getAddArrayStr());
+        System.out.println("time of execution of the following methods set int are:" + methods.getAddLinkedInt());
+        System.out.println("time of execution of the following methods set string are:" + methods.getAddLinkedStr());
+        System.out.println("time of execution of the following methods set int are:" + methods.removeAddArrayInt());
+        System.out.println("time of execution of the following methods set string are:" + methods.removeAddArrayStr());
+        System.out.println("time of execution of the following methods set int are:" + methods.removeAddLinkedInt());
+        System.out.println("time of execution of the following methods set string are:" + methods.removeAddLinkedStr());
     }
 
 }

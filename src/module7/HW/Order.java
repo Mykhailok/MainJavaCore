@@ -19,9 +19,9 @@ public class Order implements Comparable<Order> {
 
     @Override
     public int compareTo(Order o) {
-        if(this.getShopIdentificator().compareTo(o.getShopIdentificator()) == 0) {
-            return 0;
-        }
+        //if(this.getShopIdentificator().compareTo(o.getShopIdentificator()) == 0) {
+            //return 0;
+        //}
         return this.getPrice()-o.getPrice();
     }
 
