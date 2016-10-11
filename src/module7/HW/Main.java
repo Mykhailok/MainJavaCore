@@ -172,14 +172,14 @@ public class Main {
         System.out.println("time of execution of the following methods set string are:" + methods.setAddArrayStr());
         System.out.println("time of execution of the following methods set int are:" + methods.setAddLinkedInt());
         System.out.println("time of execution of the following methods set string are:" + methods.setAddLinkedStr());
-        System.out.println("time of execution of the following methods set int are:" + methods.getAddArrayInt());
-        System.out.println("time of execution of the following methods set string are:" + methods.getAddArrayStr());
-        System.out.println("time of execution of the following methods set int are:" + methods.getAddLinkedInt());
-        System.out.println("time of execution of the following methods set string are:" + methods.getAddLinkedStr());
-        System.out.println("time of execution of the following methods set int are:" + methods.removeAddArrayInt());
-        System.out.println("time of execution of the following methods set string are:" + methods.removeAddArrayStr());
-        System.out.println("time of execution of the following methods set int are:" + methods.removeAddLinkedInt());
-        System.out.println("time of execution of the following methods set string are:" + methods.removeAddLinkedStr());
+        System.out.println("time of execution of the following methods get int are:" + methods.getAddArrayInt());
+        System.out.println("time of execution of the following methods get string are:" + methods.getAddArrayStr());
+        System.out.println("time of execution of the following methods get int are:" + methods.getAddLinkedInt());
+        System.out.println("time of execution of the following methods get string are:" + methods.getAddLinkedStr());
+        System.out.println("time of execution of the following methods remove int are:" + methods.removeAddArrayInt());
+        System.out.println("time of execution of the following methods remove string are:" + methods.removeAddArrayStr());
+        System.out.println("time of execution of the following methods remove int are:" + methods.removeAddLinkedInt());
+        System.out.println("time of execution of the following methods remove string are:" + methods.removeAddLinkedStr());
     }
 
 }
