@@ -1,5 +1,7 @@
 package module7.HW;
 
+import java.util.List;
+
 public class User implements Comparable<User> {
 
     private long id;
