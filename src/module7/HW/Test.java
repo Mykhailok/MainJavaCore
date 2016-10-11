@@ -33,29 +33,26 @@ public class Test {
         usersCity2.add(new User(14,"FirstName2", "LastName2", "Lviv", 1005));
         usersCity2.add(new User(15,"FirstName3", "LastName3", "Odessa", 1006));
 
-        System.out.println("usersCity:"+usersCity);
-        System.out.println("usersCity2:"+usersCity2);
+        //System.out.println("usersCity:"+usersCity);
+        //System.out.println("usersCity2:"+usersCity2);
 
         uniqeCity.add(usersCity);
         uniqeCity.add(usersCity2);
-        System.out.println(uniqeCity);
+        //System.out.println(uniqeCity);
 
         for (List<User> city : uniqeCity){
-            System.out.println(city);
+            //System.out.println(city);
             for (User citySeparate : city){
                 if (!cities.contains(citySeparate.getCity())){
+                    result.add(new ArrayList<>(Arrays.asList(citySeparate)));
                     cities.add(citySeparate.getCity());
-                    result.add(new ArrayList<>());
                 }
-
-                System.out.println(citySeparate.getCity());
-
+                //System.out.println(citySeparate.getCity());
 
             }
-
         }
-
-        System.out.println(cities);
+        //System.out.println(cities);
         System.out.println(result);
+
     }
 }
