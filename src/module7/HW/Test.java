@@ -1,7 +1,6 @@
 package module7.HW;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Test {
     public static void main(String[] args) {
@@ -23,6 +22,7 @@ public class Test {
         List<List<User>> uniqeCity = new ArrayList<>();
         List<User> usersCity = new ArrayList<>();
         List<User> usersCity2 = new ArrayList<>();
+        List<String> cities = new ArrayList<>();
 
         usersCity.add(new User(10,"FirstName1", "LastName1", "Kyiv", 1001));
         usersCity.add(new User(11,"FirstName2", "LastName2", "Kyiv", 1002));
@@ -42,13 +42,18 @@ public class Test {
         for (List<User> city : uniqeCity){
             System.out.println(city);
             for (User citySeparate : city){
-                //if (citySeparate.getCity().equals(User))
+                if (!cities.contains(citySeparate.getCity())){
+                    cities.add(citySeparate.getCity());
+                }
+
                 System.out.println(citySeparate.getCity());
+
+
             }
 
         }
 
-
+        System.out.println(cities);
 
     }
 }
