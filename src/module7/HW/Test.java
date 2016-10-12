@@ -24,6 +24,9 @@ public class Test {
         List<User> usersCity2 = new ArrayList<>();
         List<String> cities = new ArrayList<>();
         List<List<User>> result =  new ArrayList<List<User>>();
+        List<Order> makeOrderList = new ArrayList<>();
+        //List<List<Order>> makeListOfOrderLists = new ArrayList<List<Order>>();
+
 
         usersCity.add(new User(10,"FirstName1", "LastName1", "Kyiv", 1001));
         usersCity.add(new User(11,"FirstName2", "LastName2", "Kyiv", 1002));
@@ -33,25 +36,30 @@ public class Test {
         usersCity2.add(new User(14,"FirstName2", "LastName2", "Lviv", 1005));
         usersCity2.add(new User(15,"FirstName3", "LastName3", "Odessa", 1006));
 
+
+
         //System.out.println("usersCity:"+usersCity);
         //System.out.println("usersCity2:"+usersCity2);
 
         uniqeCity.add(usersCity);
         uniqeCity.add(usersCity2);
         //System.out.println(uniqeCity);
+        //makeOrderList.add(new Order(1,100,Currency.UAH,"ItemName","Shop", new User(10,"FirstName1", "LastName1", "Kyiv", 1001)));
+
 
         for (List<User> city : uniqeCity){
             //System.out.println(city);
             for (User citySeparate : city){
                 if (!cities.contains(citySeparate.getCity())){
-                    result.add(new ArrayList<>(Arrays.asList(citySeparate)));
+
                     cities.add(citySeparate.getCity());
+                    result.add(new ArrayList<>(Arrays.asList(citySeparate)));
                 }
                 //System.out.println(citySeparate.getCity());
 
             }
         }
-        //System.out.println(cities);
+        System.out.println(cities);
         System.out.println(result);
 
     }
