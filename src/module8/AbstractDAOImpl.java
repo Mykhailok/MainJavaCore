@@ -4,37 +4,42 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class AbstractDAOImpl<T> implements AbstractDAO<T> {
+
+public class AbstractDAOImpl<T> implements AbstractDAO<T>{
 
     List<T> db = new ArrayList<T>();
 
     @Override
-    public void save(T t) {
+    public T save(T t) {
         db.add(t);
+        return t;
     }
 
     @Override
     public void delete(T t) {
         db.remove(t);
+
     }
 
     @Override
-    public void deleteAll(Collection<T> t) {
-
+    public void deleteAll(Collection t) {
         db.removeAll(t);
 
     }
 
     @Override
-    public void saveAll(Collection<T> t) {
+    public void saveAll(Collection t) {
 
         db.addAll(t);
 
     }
 
     @Override
-    public void getList(Collection<T> t) {
+    public T getList(Collection t) {
 
+        db.addAll(t);
+
+        return (T) t;
 
     }
 }

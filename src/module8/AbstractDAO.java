@@ -4,7 +4,7 @@ import java.util.Collection;
 
 public interface AbstractDAO<T> {
 
-    void save(T t);
+    T save(T t);
 
     void delete(T t);
 
@@ -12,7 +12,7 @@ public interface AbstractDAO<T> {
 
     void saveAll(Collection<T> t );
 
-    void getList(Collection<T> t );
+    T getList(Collection<T> t );
 
 
 
