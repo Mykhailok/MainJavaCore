@@ -8,6 +8,13 @@ import java.util.List;
 public class AbstractDAOImpl<T> implements AbstractDAO<T>{
 
     List<T> db = new ArrayList<T>();
+    long id;
+    String name;
+
+    public AbstractDAOImpl(long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
     @Override
     public T save(T t) {
@@ -18,7 +25,6 @@ public class AbstractDAOImpl<T> implements AbstractDAO<T>{
     @Override
     public void delete(T t) {
         db.remove(t);
-
     }
 
     @Override
@@ -39,7 +45,7 @@ public class AbstractDAOImpl<T> implements AbstractDAO<T>{
 
         db.addAll(t);
 
-        return (T) t;
+        return (T) db;
 
     }
 }

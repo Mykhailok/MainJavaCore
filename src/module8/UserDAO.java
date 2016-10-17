@@ -2,27 +2,44 @@ package module8;
 
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class UserDAO extends AbstractDAOImpl {
 
 
-    private static long id;
-    private static String name;
 
+    public UserDAO(long id, String name) {
+        super(id, name);
+    }
 
-
-    public static UserDAO save (UserDAO user) {
+    public UserDAO save (UserDAO user) {
         save(user);
         return user;
     }
 
-    public static void main(String[] args) {
-
-
-        save(new UserDAO());
-
+    public UserDAO delete (UserDAO user) {
+        delete(user);
+        return user;
     }
 
+
+    public UserDAO deleteAll (UserDAO user) {
+        deleteAll(user);
+        return user;
+    }
+
+    public UserDAO saveAll (UserDAO user) {
+        saveAll(user);
+        return user;
+    }
+
+    public UserDAO getList(Collection t) {
+
+        db.addAll(t);
+
+        return (UserDAO) db;
+
+    }
 
 }

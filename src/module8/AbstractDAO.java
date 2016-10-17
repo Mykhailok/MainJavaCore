@@ -4,6 +4,7 @@ import java.util.Collection;
 
 public interface AbstractDAO<T> {
 
+
     T save(T t);
 
     void delete(T t);
