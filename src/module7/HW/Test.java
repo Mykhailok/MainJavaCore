@@ -11,7 +11,6 @@ public class Test {
             for(int j = 0 ; j < 1000000; j ++) {
                 int a = i * 10 - 1000 + 200 - 21212;
 
-                int b = i;
             }
         }
 
@@ -23,7 +22,7 @@ public class Test {
         List<User> usersCity = new ArrayList<>();
         List<User> usersCity2 = new ArrayList<>();
         List<String> cities = new ArrayList<>();
-        List<List<User>> result =  new ArrayList<List<User>>();
+        List<List<User>> result = new ArrayList<>();
         List<Order> makeOrderList = new ArrayList<>();
         //List<List<Order>> makeListOfOrderLists = new ArrayList<List<Order>>();
 
@@ -49,15 +48,24 @@ public class Test {
 
         for (List<User> city : uniqeCity){
             //System.out.println(city);
-            for (User citySeparate : city){
+            //System.out.println(citySeparate.getCity());
+            //Stream------------------------------------------
+            /*for (User citySeparate : city){
                 if (!cities.contains(citySeparate.getCity())){
 
                     cities.add(citySeparate.getCity());
-                    result.add(new ArrayList<>(Arrays.asList(citySeparate)));
+                    result.add(new ArrayList<>(Collections.singletonList(citySeparate)));
                 }
                 //System.out.println(citySeparate.getCity());
 
-            }
+            }*/
+
+            city.stream().filter(citySeparate -> !cities.contains(citySeparate.getCity())).forEach(citySeparate -> {
+
+                cities.add(citySeparate.getCity());
+                result.add(new ArrayList<>(Collections.singletonList(citySeparate)));
+            });
+            //StreamFinish----------------------------------------
         }
         System.out.println(cities);
         System.out.println(result);

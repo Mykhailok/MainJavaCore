@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Methods {
-    ArrayList<Integer> addArrayInt = new ArrayList<Integer>();
-    ArrayList<String> addArrayStr = new ArrayList<String>();
-    LinkedList<Integer> addLinkedInt = new LinkedList<Integer>();
-    LinkedList<String> addLinkedStr = new LinkedList<String>();
+    private ArrayList<Integer> addArrayInt = new ArrayList<>();
+    ArrayList<String> addArrayStr = new ArrayList<>();
+    LinkedList<Integer> addLinkedInt = new LinkedList<>();
+    LinkedList<String> addLinkedStr = new LinkedList<>();
     int a = 20,b = 30,e = 40;
     String one = "one", two = "two", three = "three";
 

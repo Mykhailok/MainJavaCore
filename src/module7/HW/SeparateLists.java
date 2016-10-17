@@ -1,6 +1,7 @@
 package module7.HW;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class SeparateLists {
 
@@ -14,16 +15,20 @@ public class SeparateLists {
         makeOrderList.add(new Order(2,200,Currency.UAH,"ItemName2","Shop2", new User(20,"FirstName1", "LastName1", "Kyiv", 2001)));
         makeOrderList.add(new Order(3,300,Currency.UAH,"ItemName3","Shop3", new User(30,"FirstName1", "LastName1", "Odessa", 3001)));
         makeOrderList.add(new Order(4,400,Currency.UAH,"ItemName4","Shop4", new User(40,"FirstName4", "LastName4", "Lviv", 4001)));
-
-        for (Order getCity : makeOrderList){
+//Stream---------------------------------------------
+        /*for (Order getCity : makeOrderList){
             if (getCity.getUser().getCity() != null){
                 cities.add(getCity.getUser().getCity());
             }
-        }
-            for (String s : cities){
+        }*/
+
+        cities.addAll(makeOrderList.stream().filter(getCity -> getCity.getUser().getCity() != null).map(getCity
+                -> getCity.getUser().getCity()).collect(Collectors.toList()));
+//StreamFinish-----------------------------------------------
+        for (String s : cities){
                 List<Order> temp = new ArrayList<>();
                 for (int i = 0; i < makeOrderList.size(); i++){
-                   if (makeOrderList.get(i).getUser().getCity() == s){
+                   if (Objects.equals(makeOrderList.get(i).getUser().getCity(), s)){
                        temp.add(makeOrderList.get(i));
                    }
                 }
