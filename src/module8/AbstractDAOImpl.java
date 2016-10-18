@@ -26,7 +26,11 @@ public class AbstractDAOImpl<T> implements AbstractDAO<T>{
 
     @Override
     public T get(long id) {
-        
+        for (int i = 0; i < db.size(); i++){
+            if (db.get(i).equals(id)){
+                System.out.println(id);
+            }
+        }
         return null;
     }
 
