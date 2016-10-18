@@ -1,17 +1,11 @@
 package module8;
 
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
-public class UserDAO extends AbstractDAOImpl {
-
+public class UserDAO extends AbstractDAOImpl<User> {
 
 
-    public UserDAO(long id, String name) {
-        super(id, name);
-    }
 
     public UserDAO save (UserDAO user) {
         save(user);
@@ -34,11 +28,11 @@ public class UserDAO extends AbstractDAOImpl {
         return user;
     }
 
-    public UserDAO getList(Collection t) {
+    public User getList(Collection t) {
 
         db.addAll(t);
 
-        return (UserDAO) db;
+        return (User) db;
 
     }
 

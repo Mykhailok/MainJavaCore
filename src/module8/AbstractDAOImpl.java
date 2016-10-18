@@ -4,17 +4,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import static javafx.scene.input.KeyCode.M;
+
 
 public class AbstractDAOImpl<T> implements AbstractDAO<T>{
-
     List<T> db = new ArrayList<T>();
-    long id;
-    String name;
-
-    public AbstractDAOImpl(long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+    User user1 = new User(100, "Name");
+    User user2 = new User(102,"Name2");
+    User user3 = new User(103,"Name3");
 
     @Override
     public T save(T t) {
@@ -25,6 +22,17 @@ public class AbstractDAOImpl<T> implements AbstractDAO<T>{
     @Override
     public void delete(T t) {
         db.remove(t);
+    }
+
+    @Override
+    public T get(long id) {
+        
+        return null;
+    }
+
+    @Override
+    public void deleteById(long id) {
+
     }
 
     @Override
