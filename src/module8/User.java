@@ -38,4 +38,14 @@ public class User<T,I> implements GetById<I>{
         }
         return (I) db;
     }
+
+
+    public I deleteById(long id) {
+        for (User delId : db){
+            if (delId.getId()==this.id){
+                db.remove(delId);
+            }
+        }
+        return (I) db;
+    }
 }

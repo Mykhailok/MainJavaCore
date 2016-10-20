@@ -29,10 +29,14 @@ public class UserDAO extends AbstractDAOImpl<User> {
     }
 
     public User getList(Collection t) {
-
         db.addAll(t);
-
         return (User) db;
+
+    }
+
+    public  User getById(long id){
+            getById(id);
+        return (User) db ;
 
     }
 

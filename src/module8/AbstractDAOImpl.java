@@ -22,7 +22,6 @@ public class AbstractDAOImpl<T> implements AbstractDAO<T>, GetById<T> {
         db.remove(t);
     }
 
-
     @Override
     public void deleteAll(Collection t) {
         db.removeAll(t);
@@ -47,7 +46,15 @@ public class AbstractDAOImpl<T> implements AbstractDAO<T>, GetById<T> {
 
     @Override
     public T getById(long id) {
-
-        return null;
+        getById(id);
+        return (T) db;
     }
+
+    @Override
+    public void deleteById(long id) {
+
+
+
+    }
+
 }
