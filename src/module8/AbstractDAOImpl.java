@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import static javafx.scene.input.KeyCode.M;
 
-
-public class AbstractDAOImpl<T> implements AbstractDAO<T>{
+public class AbstractDAOImpl<T> implements AbstractDAO<T>, GetById<T> {
     List<T> db = new ArrayList<T>();
     User user1 = new User(100, "Name");
     User user2 = new User(102,"Name2");
@@ -24,20 +22,6 @@ public class AbstractDAOImpl<T> implements AbstractDAO<T>{
         db.remove(t);
     }
 
-    @Override
-    public T get(long id) {
-        for (int i = 0; i < db.size(); i++){
-            if (db.get(i).equals(id)){
-                System.out.println(id);
-            }
-        }
-        return null;
-    }
-
-    @Override
-    public void deleteById(long id) {
-
-    }
 
     @Override
     public void deleteAll(Collection t) {
@@ -59,5 +43,11 @@ public class AbstractDAOImpl<T> implements AbstractDAO<T>{
 
         return (T) db;
 
+    }
+
+    @Override
+    public T getById(long id) {
+
+        return null;
     }
 }
