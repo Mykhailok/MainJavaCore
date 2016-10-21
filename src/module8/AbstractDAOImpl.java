@@ -2,6 +2,7 @@ package module8;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -10,6 +11,7 @@ public class AbstractDAOImpl<T> implements AbstractDAO<T>, GetById<T> {
     User user1 = new User(100, "Name");
     User user2 = new User(102,"Name2");
     User user3 = new User(103,"Name3");
+    List<T> newList = new ArrayList<T>();
 
     @Override
     public T save(T t) {
@@ -47,7 +49,7 @@ public class AbstractDAOImpl<T> implements AbstractDAO<T>, GetById<T> {
     @Override
     public T getById(long id) {
         getById(id);
-        return (T) db;
+        return (T) newList;
     }
 
     @Override
