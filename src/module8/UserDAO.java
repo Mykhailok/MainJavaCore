@@ -40,4 +40,8 @@ public class UserDAO extends AbstractDAOImpl<User> {
 
     }
 
+    public void deleteById(long id){
+        deleteById(id);
+    }
+
 }
