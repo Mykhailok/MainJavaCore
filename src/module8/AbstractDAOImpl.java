@@ -8,10 +8,6 @@ import java.util.List;
 
 public class AbstractDAOImpl<T> implements AbstractDAO<T>, GetById<T> {
     List<T> db = new ArrayList<T>();
-    User user1 = new User(100, "Name");
-    User user2 = new User(102,"Name2");
-    User user3 = new User(103,"Name3");
-    //List<T> newList = new ArrayList<T>();
 
     @Override
     public T save(T t) {
@@ -22,6 +18,11 @@ public class AbstractDAOImpl<T> implements AbstractDAO<T>, GetById<T> {
     @Override
     public void delete(T t) {
         db.remove(t);
+    }
+
+    @Override
+    public T getById(long id) {
+        return null;
     }
 
     @Override
@@ -47,15 +48,15 @@ public class AbstractDAOImpl<T> implements AbstractDAO<T>, GetById<T> {
     }
 
     @Override
-    public T getById(long id) {
-        return getById(id);
-    }
-
-    @Override
     public  void  deleteById(long id) {
 
         deleteById(id);
 
     }
 
+
+    @Override
+    public T getByIdUsr(long id) {
+        return null;
+    }
 }

@@ -13,9 +13,14 @@ public class Main {
 
         System.out.println(users);
 
-        AbstractDAO searchID = new AbstractDAOImpl();
+        //AbstractDAO methods = new AbstractDAOImpl();
 
+        UserDAO usrDao = new UserDAO();
+            usrDao.saveUsr(new User(103, "Name3"));
 
+        usrDao.getByIdUsr(101);
+
+        System.out.println(users);
 
     }
 }

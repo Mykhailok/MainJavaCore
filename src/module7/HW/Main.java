@@ -1,6 +1,8 @@
 package module7.HW;
 
 import java.util.*;
+import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -83,17 +85,22 @@ public class Main {
         System.out.println(orders);
 
         //- separate list for two list - orders in USD and UAH
-        for (Order uah : orders){
+        //System.out.println("Start separate UAH--------");
+        orders.stream().filter(s -> s.getCurrency()==Currency.UAH)
+                .forEach(i -> UAH.add(i));
+        //System.out.println("End separate UAH-----------");
+        /*for (Order uah : orders){
             if (uah.getCurrency() == Currency.UAH) {
                 UAH.add(uah);
             }
-        }
+        }*/
+        USD.addAll(orders.stream().filter(separateCurrencyUSD -> separateCurrencyUSD.getCurrency() == Currency.USD).collect(Collectors.toList()));
 
-        for (Order usd : orders){
+        /*for (Order usd : orders){
             if (usd.getCurrency() == Currency.USD) {
                 USD.add(usd);
             }
-        }
+        }*/
         //UAH.addAll(orders.stream().filter(separateCurrencyUAH -> separateCurrencyUAH.getCurrency() == Currency.UAH).collect(Collectors.toList()));
 
         //USD.addAll(orders.stream().filter(separateCurrencyUSD -> separateCurrencyUSD.getCurrency() == Currency.USD).collect(Collectors.toList()));
@@ -156,13 +163,27 @@ public class Main {
         makeOrderList.add(new Order(2,200,Currency.UAH,"ItemName2","Shop2", new User(20,"FirstName1", "LastName1", "Kyiv", 2001)));
         makeOrderList.add(new Order(3,300,Currency.UAH,"ItemName3","Shop3", new User(30,"FirstName1", "LastName1", "Odessa", 3001)));
         makeOrderList.add(new Order(4,400,Currency.UAH,"ItemName4","Shop4", new User(40,"FirstName4", "LastName4", "Lviv", 4001)));
+        //USD.addAll(orders.stream().filter(separateCurrencyUSD -> separateCurrencyUSD.getCurrency() == Currency.USD)
+        // .collect(Collectors.toList()));
+        /*orders.stream().filter(s -> s.getCurrency()==Currency.UAH)
+                .forEach(i -> UAH.add(i));*/
 
-        for (Order getCity : makeOrderList){
+        makeOrderList.stream().filter(f -> f.getUser().getCity() !=null).forEach(i -> cities.add(i.getUser().getCity()));
+        System.out.println("Cities are: " + cities);
+        /*for (Order getCity : makeOrderList){
             if (getCity.getUser().getCity() != null){
                 cities.add(getCity.getUser().getCity());
             }
-        }
-        for (String s : cities){
+        }*/
+        System.out.println("Start separate list.....");
+        cities.forEach(f -> {
+
+            List<Order> temp = new ArrayList<Order>();
+            makeOrderList.stream().filter(m -> m.getUser().getCity() == f).forEach(e -> temp.add(e));
+            orderLists.add(temp);
+        });
+
+        /*for (String s : cities){
             List<Order> temp = new ArrayList<>();
             for (int i = 0; i < makeOrderList.size(); i++){
                 if (makeOrderList.get(i).getUser().getCity() == s){
@@ -170,9 +191,9 @@ public class Main {
                 }
             }
             orderLists.add(temp);
-        }
+        }*/
 
-        System.out.println(cities);
+        //System.out.println(cities);
         System.out.println("as many lists as many unique cities are in User: "+ orderLists);
 
     //----------------------------------Homework 7.3 with users----------------------------------
@@ -227,22 +248,22 @@ public class Main {
             - get
             - remove*/
         Methods methods = new Methods();
-        System.out.println("time of execution of the following methods add int are:" + methods.addArrayInt());
-        System.out.println("time of execution of the following methods add string are:" + methods.addArrayStr());
-        System.out.println("time of execution of the following methods add int are:" + methods.addLinkedInt());
-        System.out.println("time of execution of the following methods add string are:" + methods.addLinkedStr());
-        System.out.println("time of execution of the following methods set int are:" + methods.setAddArrayInt());
-        System.out.println("time of execution of the following methods set string are:" + methods.setAddArrayStr());
-        System.out.println("time of execution of the following methods set int are:" + methods.setAddLinkedInt());
-        System.out.println("time of execution of the following methods set string are:" + methods.setAddLinkedStr());
-        System.out.println("time of execution of the following methods get int are:" + methods.getAddArrayInt());
-        System.out.println("time of execution of the following methods get string are:" + methods.getAddArrayStr());
-        System.out.println("time of execution of the following methods get int are:" + methods.getAddLinkedInt());
-        System.out.println("time of execution of the following methods get string are:" + methods.getAddLinkedStr());
-        System.out.println("time of execution of the following methods remove int are:" + methods.removeAddArrayInt());
-        System.out.println("time of execution of the following methods remove string are:" + methods.removeAddArrayStr());
-        System.out.println("time of execution of the following methods remove int are:" + methods.removeAddLinkedInt());
-        System.out.println("time of execution of the following methods remove string are:" + methods.removeAddLinkedStr());
+        System.out.println("time Stream of execution of the following methods add int are:" + methods.addArrayInt());
+        System.out.println("time Stream of execution of the following methods add string are:" + methods.addArrayStr());
+        System.out.println("time Stream of execution of the following methods add int are:" + methods.addLinkedInt());
+        System.out.println("time Stream of execution of the following methods add string are:" + methods.addLinkedStr());
+        System.out.println("time Stream of execution of the following methods set int are:" + methods.setAddArrayInt());
+        System.out.println("time Stream of execution of the following methods set string are:" + methods.setAddArrayStr());
+        System.out.println("time Stream of execution of the following methods set int are:" + methods.setAddLinkedInt());
+        System.out.println("time Stream of execution of the following methods set string are:" + methods.setAddLinkedStr());
+        System.out.println("time Stream of execution of the following methods get int are:" + methods.getAddArrayInt());
+        System.out.println("time Stream of execution of the following methods get string are:" + methods.getAddArrayStr());
+        System.out.println("time Stream of execution of the following methods get int are:" + methods.getAddLinkedInt());
+        System.out.println("time Stream of execution of the following methods get string are:" + methods.getAddLinkedStr());
+        System.out.println("time Stream of execution of the following methods remove int are:" + methods.removeAddArrayInt());
+        System.out.println("time Stream of execution of the following methods remove string are:" + methods.removeAddArrayStr());
+        System.out.println("time Stream of execution of the following methods remove int are:" + methods.removeAddLinkedInt());
+        System.out.println("time Stream of execution of the following methods remove string are:" + methods.removeAddLinkedStr());
     }
 
 }

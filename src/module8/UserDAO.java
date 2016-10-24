@@ -7,12 +7,12 @@ public class UserDAO extends AbstractDAOImpl<User> {
 
 
 
-    public UserDAO save (UserDAO user) {
+    public User saveUsr (User user) {
         save(user);
         return user;
     }
 
-    public UserDAO delete (UserDAO user) {
+    public User deleteUsr (User user) {
         delete(user);
         return user;
     }

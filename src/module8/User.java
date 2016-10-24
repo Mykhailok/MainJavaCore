@@ -7,8 +7,7 @@ public class User<T,I> implements GetById<I>{
     long id;
     String name;
     List<User> db = new ArrayList<User>();
-    User user = new User(id, name);
-    //List<I> newList = new ArrayList<I>();
+
 
     public User(long id, String name) {
         this.id = id;
@@ -33,9 +32,10 @@ public class User<T,I> implements GetById<I>{
 
 
     @Override
-    public I getById(long id) {
+    public I getByIdUsr(long id) {
         for (User byId : db){
             if (byId.getId() == this.id){
+                System.out.println(byId.getId());
                 return (I) byId;
             }
         }
