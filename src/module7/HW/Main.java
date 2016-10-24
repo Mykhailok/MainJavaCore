@@ -215,19 +215,26 @@ public class Main {
         System.out.println(treeOrders);
 
         //- check if set contain Order where User’s lastName is - “Petrov”
-        for (Order checkLastName : treeOrders){
+
+        treeOrders.stream().filter(l -> l.getUser().getLastName().equals("Petrov")).forEach(p -> System.out.println("" +
+                "!!!Stream There is Petrov!!! at user #" + p.getUser().getId()));
+
+        /*for (Order checkLastName : treeOrders){
             if (checkLastName.getUser().getLastName().equals("Petrov")){
                 System.out.println("There is Petrov!!! at user #" + checkLastName.getUser().getId());
             }
 
-        }
+        }*/
 
         //- print Order with largest price using only one set method - get
 
         TreeSet<Order> largestPrice = new TreeSet<>();
-        for (Order largePrice : treeOrders){
+
+        treeOrders.forEach(largestPrice::add);
+        //treeOrders.forEach(t -> largestPrice.add(t));
+        /*for (Order largePrice : treeOrders){
             largestPrice.add(largePrice);
-        }
+        }*/
 
         System.out.println("Order with largest price: " + largestPrice.last());
 
