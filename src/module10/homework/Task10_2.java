@@ -6,9 +6,13 @@ public class Task10_2 {
 
         try{
             checkString("try1");
+
         }catch(ExceptionClass e){
-            System.out.println("Bad String");
-            throw new ExceptionClass("call 911");
+            //System.out.println("Bad String");
+            //throw new ExceptionClass("Test string");
+            System.out.println(e.getMessage());
+        }finally {
+            checkString("try");
         }
     }
 
