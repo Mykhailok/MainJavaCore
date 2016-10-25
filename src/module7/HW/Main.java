@@ -74,15 +74,16 @@ public class Main {
         System.out.println(duplicateOrder);
 
         //- delete items where price less than 1500
-        Iterator<Order> iterator = orders.iterator();
+        orders.stream().filter(o -> o.getPrice() < 1500).forEach(System.out::println);
 
+        /*Iterator<Order> iterator = orders.iterator();
         while (iterator.hasNext()){
             if (iterator.next().getPrice() < 1500) {
                 iterator.remove();
             }
-        }
+        }*/
 
-        System.out.println(orders);
+        System.out.println("Delete items where price less than 1500: " + orders);
 
         //- separate list for two list - orders in USD and UAH
         //System.out.println("Start separate UAH--------");
