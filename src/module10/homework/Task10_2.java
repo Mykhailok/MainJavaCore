@@ -11,6 +11,7 @@ public class Task10_2 {
             //System.out.println("Bad String");
             //throw new ExceptionClass("Test string");
             System.out.println(e.getMessage());
+
         }finally {
             checkString("try");
         }
