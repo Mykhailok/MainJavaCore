@@ -2,9 +2,15 @@ package module10.homework;
 
 public class Task10_4 {
 
-    public void f() throws ExceptionClass {
+    public void f() {
         System.out.println("Calling in method f() -> g()");
-        g();
+
+        try {
+            g();
+        } catch (ExceptionClass exceptionClass) {
+            throw new NullPointerException();
+            //exceptionClass.printStackTrace();
+        }
 
     }
 

@@ -6,7 +6,7 @@ public class Main {
         //item.f();
         try {
             item.f();
-        } catch (ExceptionClass exceptionClass) {
+        } catch (NullPointerException e) {
             System.out.println("Yeeehaaa, we cought this Exception");
             //exceptionClass.printStackTrace();
         }
