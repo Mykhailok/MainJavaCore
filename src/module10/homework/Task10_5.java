@@ -15,7 +15,7 @@ public class Task10_5 {
             throw new ThreeEcxeption("Third Exception");
         }catch (OneException | TwoException | ThreeEcxeption e){
             System.out.println("I was there");
-            e.fillInStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 }
