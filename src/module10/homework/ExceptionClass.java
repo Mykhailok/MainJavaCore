@@ -7,8 +7,9 @@ public class ExceptionClass extends Exception {
         super(message);
     }
 
-    @Override
-    public String getMessage() {
-        return super.getMessage();
+    public void myOwnMethod(){
+
+        System.out.println(getMessage());
+
     }
 }
