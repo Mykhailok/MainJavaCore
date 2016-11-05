@@ -18,12 +18,14 @@ public class ReadFile {
         try {
             while((line = bufferedReader.readLine())!= null){
                 result = stringBuilder.append(line);
+                result.append(System.lineSeparator());
                 System.out.println(line);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("В результате получили строку: "+result);
+        System.out.println("В результате получили строку: \n"+result);
+
         return result;
     }
 }

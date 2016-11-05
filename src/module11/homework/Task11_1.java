@@ -12,17 +12,15 @@ import java.io.FileNotFoundException;
 public class Task11_1 {
 
     public static void main(String[] args) throws FileNotFoundException {
+        String findWord = "two";
+        String replaceWord = "replaceWord";
+
         ReadFile readFile = new ReadFile();
 
         StringBuilder res =  readFile.ReadFromFile();
-
-        String s = res.toString().replaceAll("two","six");
-
-        System.out.println("После замены получили: "+s);
+        String s = res.toString().replaceAll(findWord,replaceWord);
+        System.out.println("После замены получили: \n"+s);
 
     }
-
-
-
 
 }
