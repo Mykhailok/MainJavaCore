@@ -22,7 +22,7 @@ public class ReadFile {
                 System.out.println(line);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Oups!!! Something went wrong");
         }
         System.out.println("В результате получили строку: \n"+result);
 
