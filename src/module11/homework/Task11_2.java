@@ -2,14 +2,39 @@ package module11.homework;
 
 
 
-import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Task11_2 {
 
-    public static void main(String[]args) throws FileNotFoundException{
+    public static File fileContentReplacer(Map<String, String> map) throws IOException {
+        String path = "d:/output.txt";
+        ReadFile readFile = new ReadFile();
+        StringBuilder stringBuilder = readFile.ReadFromFile();
+        String s = stringBuilder.toString();
+        for (Map.Entry<String,String> entry : map.entrySet()){
+            s = s.replaceAll(entry.getKey(),entry.getValue());
+        }
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path));
+            bufferedWriter.write(s);
+            bufferedWriter.close();
+        return new File(path);
+    }
+
+    public static void main(String[]args) throws IOException {
+        Map<String, String> map = new HashMap<>();
+        map.put("two", "replaceWord");
+        map.put("three", "ANOTHERWORD");
+        System.out.println("Готовый файл выглядит следующим образом: \n"+fileContentReplacer(map));
+    }
+
+}
+
+
+
+
+/*
         String findWord = "four";
         String replaceWord = "REPLACEWORD";
 
@@ -27,8 +52,4 @@ public class Task11_2 {
                 bufferedWriter.close();
             } catch (IOException e) {
                 System.err.println("Write failed");
-            }
-
-    }
-
-}
+            }*/

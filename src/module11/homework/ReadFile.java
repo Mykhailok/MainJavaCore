@@ -26,6 +26,12 @@ public class ReadFile {
         }
         System.out.println("В результате получили строку: \n"+result);
 
+        try {
+            bufferedReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         return result;
     }
 }
