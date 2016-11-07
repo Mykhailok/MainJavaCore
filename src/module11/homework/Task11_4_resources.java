@@ -18,7 +18,6 @@ public class Task11_4_resources {
                 }
             }
         }
-
         return checkWord;
     }
 
